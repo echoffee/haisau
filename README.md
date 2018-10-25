@@ -1,14 +1,14 @@
 # haisau
-comfy project manager
+Conduite de projet groupe 2.6.
 
 ## User Stories
 
 ### Définitions
 
-**Application** représente l'outil de gestion de projet développé ici.
+**Application** représente l'outil de gestion de projet que nous développons au cours de cette UE.
 
 **Visiteur** représente une personne accédant au site internet sans avoir créé
-de compte au préalable sur celui-ci.
+de compte au préalable.
 
 **Utilisateur** représente une personne qui utilise l'application, pouvant être
 le propriétaire d'un projet ou bien un développeur travaillant pour un
@@ -28,8 +28,8 @@ difficulté. Un ensemble de tâches sera associé au cours d'un sprint à cette 
 
 **Sprint** représente la composition d'un identifiant et d'un ensemble de
 tâches. Les dates de début et fin du sprint sont définies automatiquement en
-fonction de la date de début du projet et d'une période de constante de de deux
-semaines.
+fonction de la date de début du projet et d'une période constante définie en
+début de sprint
 
 **Tâche**  représente la composition d'un identifiant, d'une brève description,
 un ensemble de tests associés ainsi qu'un état (TODO, IN-PROGRESS, DONE/UNDONE).
@@ -42,7 +42,7 @@ pourra être différencié visuellement des autres tâches (couleur, préfixe au
 ou autre).
 
 **Sandbox** représente la section du site où de nouvelles US sont suggérées,
-attendant d'être examinées de sorte à ce que si l'US s'avère être jugée
+en attendant d'être examinées de sorte à ce que si l'US s'avère être jugée
 intéressante par les autres développeurs du projet, elle puisse être ajoutée au
 backlog.
 
@@ -51,11 +51,11 @@ backlog.
 |-------------|-------------|----------|------------|
 | 1 | En tant que **visiteur**, je veux créer un compte sur l'application en paramétrant mes identifiants de connexion tels que mon nom d'utilisateur et mon mot de passe afin de me connecter. Un lien redirigeant vers la création d'un compte utilisateur sera présent dès la page d'accueil de l'application. Les identifiants (*Nom d'utilisateur*, *Mot de passe* et *Adresse mail*) seront obligatoirement à saisir dans un formulaire sur ladite page.|  | 1 |
 | 2 | En tant qu' **utilisateur**, je veux me connecter à l'application à l'aide de mes identifiants de connexion afin de consulter ou modifier l'état de mes projets.| | 1 |
-| 3 | En tant que **développeur**, je veux me déconnecter de l'application à tout moment afin de terminer ma session, en appuyant sur le bouton "Déconnexion" présent dans la barre des tâches présente su toutes les pages de l'application, et après déconnexion de ma sessions je suis redirige vers la page de connexion. | | 1 |
-| 4 | En tant que **développeur**, une fois connecté, je veux consulter la liste des projets auxquels je participe afin d'être au courant de l'avancement de chacun. Chaque projet sera listé dans l'ordre de leur création, et sera écrit de la forme (*Nom du projet*, *Nom du sprint actuel*, *Nombre de tâches accomplies/nombre de tâches assignées au sprint*, *Date de fin du sprint*).| | 1 |
+| 3 | En tant que **développeur**, je veux me déconnecter de l'application à tout moment afin de fermer ma session en appuyant sur le bouton "Déconnexion" situé dans la barre des tâches présente sur toutes les pages de l'application, et une fois déconnecté je suis redirige vers la page de connexion.| | 1 |
+| 4 | En tant que **développeur**, une fois connecté, je veux consulter la liste des projets auxquels je participe afin d'être au courant de l'avancement de chacun. Chaque projet sera listé dans l'ordre de leur création, et sera écrit selon la forme (*Nom du projet*, *Nom du sprint actuel*, *Nombre de tâches accomplies/nombre de tâches assignées au sprint*, *Date de fin du sprint*).| | 1 |
 | 5 | En tant que **développeur**, je veux créer un projet sur l'application afin de le gérer. Dans un onglet Projets et sous la liste des projets en cours sera positionné un lien redirigeant vers une page comportant le formulaire de création de projet. Ce formulaire comportera le champ du nom du projet, et la durée constante d'un sprint qui sera non-modifiable par la suite.| | 1 |
-| 6 | En tant que **développeur**, je veux modifier le nom d'un projet auquel je participe afin de de mettre à jour ou de clarifier sa visée. Cette option serait disponible dans un onglet Settings disponible sur la page d'accueil du projet.| | 1 |
-| 7 | En tant que **développeur**, je veux supprimer un projet auquel je participe afin de l'enlever de ma liste de projets. Cette option se trouvera sur la page d'accueil du projet à supprimer représenté par un lien différentiable des autres option (en rouge par exemple), avec une fenêtre pop-up de demande de confirmation avant de supprimer définitivement le projet.| | 1 |
+| 6 | En tant que **développeur**, je veux modifier le nom d'un projet auquel je participe afin de le mettre à jour ou de clarifier sa visée. Cette option sera disponible dans un onglet Settings situé sur la page d'accueil du projet.| | 1 |
+| 7 | En tant que **développeur**, je veux supprimer un projet auquel je participe afin de l'enlever de ma liste de projets. Cette option se trouvera sur la page d'accueil du projet à supprimer représenté par un lien différentiable des autres options (en rouge par exemple), avec une fenêtre pop-up de demande de confirmation avant de supprimer définitivement le projet.| | 1 |
 | 8 | En tant que **développeur**, je veux inviter des développeurs via leur nom d'utilisateur ou leur adresse email à mon projet afin qu'ils puissent travailler dessus. Une fois la création d'un projet validée, l'utilisateur sera redirigé vers la page d'accueil de son nouveau projet, qui contiendra un lien d'invitation à envoyer aux autres développeurs. En plus du lien d'invitation, un champ de recherche sera présent où l'utilisateur pourra y saisir le nom des développeurs à inviter pour leur envoyer directement le lien d'invitation sans passer par un client de messagerie externe.| | 1 |
 | 9 | En tant que **développeur**, je veux répondre à une invitation de projet en cliquant sur un lien unique d'invitation afin de travailler ou non dessus. Ce lien redirigera vers une page où l'utilisateur invité devra se connecter si ce n'est pas déjà fait, et cliquer sur un bouton confirmant son choix selon qu'il souhaite ou non rejoindre le projet. La page affichera le nom du projet à rejoindre.| | 1 |
 | 10 | En tant que **développeur**, je veux consulter le backlog d'un projet auquel je participe afin de connaître les user stories de ce dernier. Sur la page d'accueil d'un projet, un lien vers le backlog du projet sera présent dans une barre de tâches via un onglet "Backlog", redirigeant vers la page du backlog. Les user stories y seront référencées sous forme de liste.| | 1 |
