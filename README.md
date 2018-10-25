@@ -69,6 +69,6 @@ backlog.
 | 19 | En tant que **développeur**, je veux ajouter une tâche à la liste de tâches liée à un sprint afin qu'elle soit listée avec les autres tâches et visible par les autres utilisateurs | | 1 |
 | 20 | En tant que **développeur**, je veux modifier une tâche comprise dans le sprint courant afin de mettre à jour son statut.| | 1 |
 | 21 | En tant que **développeur**, je veux ajouter des tests à une tâche et modifier leur état par la suite , afin de vérifier son bon fonctionnement.| | 1 |
-| 20 | En tant que **développeur**, je veux signaler à l'équipe un bug présent dans l'application afin de le corriger pour la suite.| | 1 |
+| 22 | En tant que **développeur**, je veux signaler à l'équipe un bug présent dans l'application afin de le corriger pour la suite.| | 1 |
 | 23 | En tant que **développeur**, je veux observer le graphique du burn-down chart de mon sprint afin d'estimer la charge de travail restante en fonction du temps.| | 1 |
 | 24 | En tant que **développeur**, je veux me déconnecter de l'application à tout moment afin de terminer ma session, en appuyant sur le button "Déconnexion" présent dans le header de toutes les pages, ce bouton me redirige vers la page de login. | | 1 |
