@@ -7,9 +7,9 @@ Conduite de projet groupe 2.6.
 Les différents fichiers traitant de l'organisation du projet se trouvent dans le répertoire `docs/` à
 la racine du dépot.
 
-Issues : [issues.md](https://github.com/echoffee/haisau/docs/issues.md).
+Issues : [issues.md](https://github.com/echoffee/haisau/blob/master/docs/issues.md).
 
-Sprints : [sprints](https://github.com/echoffee/haisau/docs/sprints).
+Sprints : [sprints](https://github.com/echoffee/haisau/blob/master/docs/sprints).
 
 Les commits sur la branche `master` sont testés et référencés via [Travis CI](https://travis-ci.com/echoffee/travis-test).
 Les *releases* sont composées sur des branches labélisées à partir de commits sur `master` via 
