@@ -32,15 +32,15 @@ index.php.
 ### projectList.php
 
 Contient la liste des projets visibles par un utilisateur connecté. Chaque
-projet contient les champs suivants : "Project name", "Actual sprint name",
+projet contient les champs suivants : "Project name", "Current sprint name",
 "Progress" (représentant le Nombre de tâches accomplies/nombre de tâches
-assignées au sprint), et "Actual sprint end date". La page contiendra en haut de
+assignées au sprint), et "Current sprint end date". La page contiendra en haut de
 la liste des projets un bouton "Create new project" redirigeant vers la page de
 création de projet createProject.php. A côté du nom de chaque projet dans la
-liste apparaîtra un bouton "Modifier" permettant de modifier le nom du projet
+liste apparaîtra un bouton "Modify" permettant de modifier le nom du projet
 en rentrant un nouveau nom manuellement, modifiant ainsi le nom du projet dans
 la base de données et actualisant le nom du projet sur cette page. Il y aura
-également un bouton "Supprimer" à côté de chaque projet qui, une fois cliqué,
+également un bouton "Delete" à côté de chaque projet qui, une fois cliqué,
 fera apparaître une fenêtre pop-up de confirmation permettant de confirmer le
 choix de supprimer le projet à qui le bouton est affilié. La fenêtre pop up
 contiendra un texte "Do you want to delete this project ?" et deux

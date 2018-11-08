@@ -11,6 +11,8 @@ Issues : [issues.md](https://github.com/echoffee/haisau/blob/master/docs/issues.
 
 Sprints : [sprints](https://github.com/echoffee/haisau/blob/master/docs/sprints).
 
+L'état d'avancement des sprints est situé dans l'onglet [Projet](https://github.com/echoffee/haisau/projects) de GitHub.
+
 Les commits sur la branche `master` sont testés et référencés via [Travis CI](https://travis-ci.com/echoffee/travis-test).
 Les *releases* sont composées sur des branches labélisées à partir de commits sur `master` via 
 *cherry-picking* par un intégrateur désigné au sein de l'équipe.
@@ -40,8 +42,9 @@ L'application tournera sur la machine locale en utilisant ces ports :
 
 ### Effectuer les tests automatiques
 
-Après avoir lancer les conteneurs, les scripts Python situés dans le répertoire `tests/` peuvent être
-lancés via Python. Ces tests font appel à la librairie `selenium`. Pour l'installer via `pip` :
+Après avoir lancer les conteneurs, les scripts de tests Python situés dans le répertoire `tests/` peuvent être
+lancés via Python. Ces tests font appel à la librairie `selenium` et `mysql-connector`. Pour les installer via `pip` :
 ```
-pip install selenium   
+pip install selenium mysql-connector   
 ```
+
