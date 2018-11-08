@@ -40,8 +40,9 @@ L'application tournera sur la machine locale en utilisant ces ports :
 
 ### Effectuer les tests automatiques
 
-Après avoir lancer les conteneurs, les scripts Python situés dans le répertoire `tests/` peuvent être
-lancés via Python. Ces tests font appel à la librairie `selenium`. Pour l'installer via `pip` :
+Après avoir lancer les conteneurs, les scripts de tests Python situés dans le répertoire `tests/` peuvent être
+lancés via Python. Ces tests font appel à la librairie `selenium` et `mysql-connector`. Pour les installer via `pip` :
 ```
-pip install selenium   
+pip install selenium mysql-connector   
 ```
+
