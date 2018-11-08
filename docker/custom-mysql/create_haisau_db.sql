@@ -44,3 +44,4 @@ CREATE TABLE Tache (
 	idProjet int NOT NULL,
 	PRIMARY KEY (idTache)
 );
+INSERT INTO `Utilisateur` (`idUtilisateur`, `login`, `password`, `mail`) VALUES (NULL, 'admin', 'admin', 'admin@mail.com');

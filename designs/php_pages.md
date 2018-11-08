@@ -22,6 +22,7 @@ email", "username", "password". Tout en bas du formulaire se trouve un bouton
 "Create an account" qui inscrit l'utilisateur dans la base de données. Une fois
 l'utilisateur inscrit, il pourra se connecter depuis index.php.
 
+
 ### disconnect.php
 
 Contient une page spécifiant que l'utilisateur s'est bien déconnecté. Cette page
@@ -94,7 +95,7 @@ redirigera l'utilisateur vers la page backlog.php.
 
 ### connect.php
 
-Contient le code de connexion d'un utilisateur au site internet.
+Contient le code qui permet d'établir une connexion vers la base de donnée mysql.
 
 ### functions.php
 
