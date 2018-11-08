@@ -2,7 +2,7 @@ version: "3"
 
 services:
   webserver:
-    image: php:7.2.1-apache
+    build: './docker/custom_php'
     container_name: 'apache2'
     restart: 'always'
     ports:
@@ -15,9 +15,9 @@ services:
       - ./config:/usr/local/etc/php
     environment:
       APACHE_DOCUMENT_ROOT: /var/www/html
-  
+
   mysql:
-    image: mysql
+    image: mysql:5.7
     container_name: 'mysql'
     restart: 'always'
     ports:
