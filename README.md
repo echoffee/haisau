@@ -11,6 +11,8 @@ Issues : [issues.md](https://github.com/echoffee/haisau/blob/master/docs/issues.
 
 Sprints : [sprints](https://github.com/echoffee/haisau/blob/master/docs/sprints).
 
+L'état d'avancement des sprints est situé dans l'onglet [Projet](https://github.com/echoffee/haisau/projects) de GitHub.
+
 Les commits sur la branche `master` sont testés et référencés via [Travis CI](https://travis-ci.com/echoffee/travis-test).
 Les *releases* sont composées sur des branches labélisées à partir de commits sur `master` via 
 *cherry-picking* par un intégrateur désigné au sein de l'équipe.
