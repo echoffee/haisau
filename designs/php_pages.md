@@ -9,24 +9,25 @@ l'utilisateur est déjà inscrit sur le site. Un bouton SIGN IN permettra de
 soumette la valeur es ces champs pour voir s'il existe un tel utilisateur dans
 la base de donnée, et si c'est le cas, redirige l'utilisateur vers la page
 projectList.php. De plus, un lien de label "New user ? Create an account"
-redirigeant vers la page de création de compte (register.php) sera disponible
-sur cette page. Pour toute autre page que celle-ci, nous auront un bouton "log
-out" disponible qui nous permettra de nous déconnecter de notre session, nous
-redirigeant ainsi vers la page disconnect.php.
+redirigeant vers la page de création de compte register.php sera disponible
+sur cette page. Pour toute autre page que celle-ci et register.php, nous auront
+un bouton "log out" disponible et visible nous permettra de nous déconnecter de
+notre session, nous redirigeant ainsi vers la page disconnect.php.
 
 ### register.php
 
 Contient le formulaire de création de compte permettant à un utilisateur de
 se connecter par la suite. Ce formulaire contient les champs suivants : "adresse
 email", "username", "password". Tout en bas du formulaire se trouve un bouton
-"Create an account" qui inscrit l'utilisateur dans la base de données.  Une fois
+"Create an account" qui inscrit l'utilisateur dans la base de données. Une fois
 l'utilisateur inscrit, il pourra se connecter depuis index.php.
 
 ### disconnect.php
 
 Contient une page spécifiant que l'utilisateur s'est bien déconnecté. Cette page
-contient le texte "You logged out successfully" qui apparait de manière visible
-par l'utilisateur, puis le redirige vers l'écran de connexion, soit index.php.
+contient le texte "You logged out successfully" qui apparait de manière claire
+et visible par l'utilisateur, puis le redirige vers la page de connexion, soit
+index.php.
 
 ### projectList.php
 
@@ -42,7 +43,7 @@ la base de données et actualisant le nom du projet sur cette page. Il y aura
 également un bouton "Supprimer" à côté de chaque projet qui, une fois cliqué,
 fera apparaître une fenêtre pop-up de confirmation permettant de confirmer le
 choix de supprimer le projet à qui le bouton est affilié. La fenêtre pop up
-contiendra les boutons un texte "Do you want to delete this project ?" et deux
+contiendra un texte "Do you want to delete this project ?" et deux
 boutons : un bouton "Confirm" et un bouton "Cancel".
 
 ### createProject.php
@@ -63,12 +64,33 @@ vers la page projectList.php.
 
 ### backlog.php
 
-Contient le backlog donc la liste des user story d'un projet visible par un utilisateur connecté.
+Contient le backlog donc la liste des user story d'un projet visible par un
+utilisateur connecté. Chaque backlog est représenté par un grand tableau
+contenant les colonnes suivantes : "ID", "Description", "Priority", et
+"Difficulty". Chaque ligne du tableau représentera une user story et aura chacun
+de ses champs renseigné. La page contiendra en haut de la liste des projets un
+bouton "Add new issue", redirigeant l'utilisateur vers la page de création
+d'user stories nommée addUserStory.php. A côté du nom de chaque issue dans la
+liste apparaîtra un bouton "Modifier" permettant de modifier la description de
+l'issue, sa priorité ou sa difficulté (pas son ID), et mettra ces informations à
+jour sur la page actuelle. Il y aura également un bouton "Supprimer" à côté de
+chaque issue qui, une fois cliqué, fera apparaître une fenêtre pop-up de
+confirmation permettant de confirmer le choix de supprimer l'issue à qui le
+bouton est affilié. La fenêtre pop up contiendra un texte "Do you want to delete
+this issue ?" et deux boutons : un bouton "Confirm" et un bouton "Cancel".
 
 ### addUserStory.php
 
 Contient le formulaire de création d'une user story afin de l'ajouter au backlog
-d'un projet.
+d'un projet. Le formulaire contiendra trois champs à renseigner : "Description",
+pour définir la description d'une user story, "Priority" pour définir sa
+priorité, et "Difficulty" permettant de définir sa difficulté. En bas du
+formulaire se situeront deux boutons. Le premier bouton sera nommé "Add user
+story", permettant d'ajouter l'user story au backlog' avec les valeurs des
+champs renseignés et l'ID de l'user story sera calculé à partir du dernier ID
+donné à une US déjà contenue dans le backlog + 1. Le deuxième bouton quand à lui
+sera nommé "Cancel" et permettra d'annuler l'ajout d'une user story et
+redirigera l'utilisateur vers la page backlog.php.
 
 ### connect.php
 
