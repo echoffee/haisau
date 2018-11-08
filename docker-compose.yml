@@ -2,7 +2,7 @@ version: "3"
 
 services:
   webserver:
-    build: './docker/custom_php'
+    build: './docker/custom-php'
     container_name: 'apache2'
     restart: 'always'
     ports:
