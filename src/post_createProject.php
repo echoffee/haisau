@@ -9,8 +9,10 @@ $sprintDuration = $_POST['sprintDuration'];
 
 $query = "INSERT INTO Projet (nom, dureeSprint) VALUES ( '$projectName', $sprintDuration);";
 $result = $conn->exec($query) ;
-if ($result == 1)
+if ($result == 1) {
 	echo "Project " . $projectName . " created successfully.";
+	header('Location: projectList.php'); 
+}
 else
 	echo "An error occured while creating " . $projectName . ".";
 ?>

@@ -15,7 +15,7 @@
       <h1>List of your current project</h1>
     </p>
 
-     <button type="button" id="create-project-btn">New Project</button>
+     <button type="button" id="create-project-btn" onClick="document.location.href='http://localhost:8080/createProject.php'">New Project</button>
 
       <table style="width:100%">
         <tr>
