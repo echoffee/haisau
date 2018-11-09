@@ -35,7 +35,7 @@ Pour déployer les conteneurs :
   ```
   3. Lancer les différents conteneurs via docker-compose :
   ```
-    docker-compose
+    docker-compose up -d
   ```
 
 L'application tournera sur la machine locale en utilisant ces ports :
