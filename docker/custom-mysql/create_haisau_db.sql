@@ -14,10 +14,9 @@ CREATE TABLE Projet (
 	PRIMARY KEY(idProjet)
 );
 CREATE TABLE Travailler (
-	idTravailler int NOT NULL AUTO_INCREMENT,
 	idUtilisateur int NOT NULL,
 	idProjet int NOT NULL,
-	PRIMARY KEY(idTravailler)
+	PRIMARY KEY(idUtilisateur, idProject)
 );
 CREATE TABLE Sprint (
 	idSprint int NOT NULL AUTO_INCREMENT,
