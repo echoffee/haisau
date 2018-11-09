@@ -30,9 +30,9 @@
           require 'connect.php';
 
           $query = "SELECT nom FROM Projet";
-          $data = $conn->exec($query);
-          vardump($data);
-          echo "<tr><th>".$data['nom']."</th><th></th><th></th><th></th></tr>"
+          foreach($conn->query($query) as $row){
+            echo "<tr><th>".$row['nom']."</th><th></th><th></th><th></th></tr>";
+          }
         ?> 
 
       </table> 
