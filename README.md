@@ -1,5 +1,5 @@
 # haisau
-[![Build Status](https://travis-ci.com/echoffee/travis-test.svg?branch=master)](https://travis-ci.com/echoffee/haisau)
+[![Build Status](https://travis-ci.com/echoffee/haisau.svg?branch=master)](https://travis-ci.com/echoffee/haisau)
 
 Conduite de projet groupe 2.6.
 
