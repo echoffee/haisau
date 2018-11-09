@@ -26,27 +26,13 @@
         </tr>
 
         <?php
-          // on se connecte à MySQL
-          $db = mysql_connect('localhost:8081', 'root', 'root');
+          session_start();
+          require 'connect.php';
 
-          // on sélectionne la base
-          mysql_select_db('haisau',$db);
-
-          // on crée la requête SQL
-          $sql = 'SELECT nom FROM Projet';
-
-          // on envoie la requête
-          $req = mysql_query($sql) or die('Erreur SQL !<br>'.$sql.'<br>'.mysql_error());
-
-          // on fait une boucle qui va faire un tour pour chaque enregistrement
-          while($data = mysql_fetch_assoc($req))
-              {
-              // on affiche les informations de l'enregistrement en cours
-                echo'<tr><th>'.$data['nom'].'</th><th></th><th></th><th></th></tr>';
-              }
-
-          // on ferme la connexion à mysql
-          mysql_close();
+          $query = "SELECT nom FROM Projet";
+          $data = $conn->exec($query);
+          vardump($data);
+          echo "<tr><th>".$data['nom']."</th><th></th><th></th><th></th></tr>"
         ?> 
 
       </table> 
