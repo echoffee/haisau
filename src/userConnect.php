@@ -7,8 +7,8 @@ require 'connect.php';
 if (isset($_POST['login_user'])) 
 {  
     $username = !empty($_POST['username']) ? trim($_POST['username']) : null;
-    $password = !empty($_POST['password']) ? trim($_POST['password']) : null;     
-
+    $password = !empty($_POST['password']) ? $_POST['password'] : null;     
+	$password = sha1($password);
     //echo $username ."<br>";
     //echo $password ."<br>";
 
@@ -18,7 +18,7 @@ if (isset($_POST['login_user']))
         $count = $stmt->rowCount();
         if($count <= 0) // query is empty
         {
-            die('connexion échoué'); 
+		echo 'connexion échoué';
         }
         else 
         {
@@ -29,3 +29,5 @@ if (isset($_POST['login_user']))
 
 }
 ?>
+
+<a href="index.php">Home</a>
