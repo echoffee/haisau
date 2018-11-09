@@ -29,9 +29,13 @@ Pour déployer les conteneurs :
   ```
     git clone https://github.com/echoffee/haisau.git   
   ```
-  2. Se placer à la racine et lancer docker-compose via la commande
+  2. Se placer à la racine et construire les images mysql et php :
   ```
-    docker-compose up -d   
+    docker-compose build
+  ```
+  3. Lancer les différents conteneurs via docker-compose :
+  ```
+    docker-compose
   ```
 
 L'application tournera sur la machine locale en utilisant ces ports :
