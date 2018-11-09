@@ -77,15 +77,12 @@ for i in range(10):
     test_correct_insert("Projet", ["nom", "dureeSprint"], sql_iProjetN)
 
 ################
-sql_iTravailler1 = (1, 1, 2)
+sql_iTravailler1 = (1, 2)
 sql_iTravailler2 = (1, 1)
 sql_iTravailler3 = (1, 2)
-sql_iTravaillerN = (1, 2)
-test_correct_insert("Travailler", ["idTravailler", "idUtilisateur", "idProjet"], sql_iTravailler1)
-test_incorrect_insert("Travailler", ["idTravailler", "idUtilisateur"], sql_iTravailler2)
-test_incorrect_insert("Travailler", ["idTravailler", "idProjet"], sql_iTravailler3)
-for i in range(10):
-    test_correct_insert("Travailler", ["idUtilisateur", "idProjet"], sql_iTravaillerN)
+test_correct_insert("Travailler", ["idUtilisateur", "idProjet"], sql_iTravailler1)
+test_correct_insert("Travailler", ["idUtilisateur", "idProjet"], sql_iTravailler2)
+test_incorrect_insert("Travailler", ["idUtilisateur", "idProjet"], sql_iTravailler3)
 
 #################
 # TBC ###########

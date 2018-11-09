@@ -12,7 +12,7 @@
   </head>
   <body class="bg-white">
     <p>
-      <h1>List of your current project</h1>
+      <h1>List of your current projects</h1>
     </p>
 
      <button type="button" id="create-project-btn" onClick="document.location.href='http://localhost:8080/createProject.php'">New Project</button>
@@ -29,9 +29,9 @@
           session_start();
           require 'connect.php';
 
-          $query = "SELECT nom FROM Projet";
+          $query = "SELECT * FROM Projet";
           foreach($conn->query($query) as $row){
-            echo "<tr><th>".$row['nom']."</th><th></th><th></th><th></th></tr>";
+            echo "<tr><th><a href=''>".$row['nom']."</a><button type='button' id='edit-btn'>Edit</button><button type='button' id='delete-btn'>Delete</button></th><th></th><th></th><th></th></tr>";
           }
         ?> 
 

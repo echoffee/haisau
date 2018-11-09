@@ -13,7 +13,7 @@
       <td>Sprint duration (days) : </td><td><input type="number" name="sprintDuration" /></td>
      </tr>
      <tr>
-      <td></td><td><input type="submit" value="Create"></td>
+      <td></td><td><input id="bCreate" type="submit" value="Create"></td>
      </tr>
      <tr>
       <td></td><td><a href="projectList.php">Cancel</a></td>
