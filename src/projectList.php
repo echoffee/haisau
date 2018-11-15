@@ -40,9 +40,9 @@
               }
             }
 
-            $query = "SELECT COUNT(*) FROM Tache JOIN Projet ON Projet.idProjet = Tache.idProjet WHERE Tache.statut LIKE 'ONGOING' AND Tache.idProjet = ".$projet['idProjet'];
+            $query = "SELECT COUNT(*) FROM Tache JOIN Projet ON Projet.idProjet = Tache.idProjet WHERE Tache.statut LIKE 'DONE' AND Tache.idProjet = ".$projet['idProjet'];
             foreach($conn->query($query) as $taskCount){
-              $projet["nbTachesGoing"] = $taskCount[0];
+              $projet["nbTachesDone"] = $taskCount[0];
             }
 
             $query = "SELECT COUNT(*) FROM Tache JOIN Projet ON Projet.idProjet = Tache.idProjet WHERE Tache.idProjet = ".$projet['idProjet'];
@@ -53,11 +53,11 @@
             if(empty($projet['currentSprint'])){
               $projet['currentSprint']['nom'] = "No sprint planned";
               $projet['currentSprint']['dateFin'] = "/";
-              $projet['nbTachesGoing'] = "";
+              $projet['nbTachesDone'] = "";
               $projet['nbTachesTotal'] = "";
             }
 
-            echo "<tr><th><a href=''>".$projet['nom']."</a><button type='button' id='edit-btn'>Edit</button><button type='button' id='delete-btn'>Delete</button></th><th>".$projet['currentSprint']['nom']."</th><th>".$projet['nbTachesGoing']."/".$projet['nbTachesTotal']."</th><th>".$projet['currentSprint']['dateFin']."</th></tr>";
+            echo "<tr><th><a href=''>".$projet['nom']."</a><button type='button' id='edit-btn'>Edit</button><button type='button' id='delete-btn'>Delete</button></th><th>".$projet['currentSprint']['nom']."</th><th>".$projet['nbTachesDone']."/".$projet['nbTachesTotal']."</th><th>".$projet['currentSprint']['dateFin']."</th></tr>";
 
           }
         ?> 
