@@ -71,8 +71,8 @@ US planifiées de base au Sprint 2 : 9, 13, 14, 15, 16, 19
 | T12tr | Réalisation du test de la modification d'une user story | 12 | T12td | 0.5jh |
 | T13d | Design de la page d'ajout d'US à la sandbox | 13 | Aucune | 0.5jh |
 | T13r | Réalisation de la page d'ajout d'US à la sandbox | 13 | T13d, T0d | 1.5jh |
-| T13td | Design du test de l'ajour d'US à la sandbox | 13 | T13d | 0.5jh |
-| T13tr | Réalisation du test de l'ajour d'US à la sandbox | 13 | T13td | 0.5jh |
+| T13td | Design du test de l'ajout d'US à la sandbox | 13 | T13d | 0.5jh |
+| T13tr | Réalisation du test de l'ajout d'US à la sandbox | 13 | T13td | 0.5jh |
 | T14d | Design de la page présentant la sandbox des US | 14 | Aucune | 0.5jh |
 | T14r | Réalisation de la page présentant la sandbox des US | 14 | T14d, T0d | 1jh |
 | T14td | Design du test de la consultation d'US et d'ajout au BL | 14 | T14d | 0.5jh |
