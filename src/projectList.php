@@ -36,7 +36,7 @@
             foreach($conn->query($query) as $sprint){
               if((strtotime($sprint['dateDebut']) < time()) && strtotime($sprint['dateFin']) > time()){
                 $projet['currentSprint'] = $sprint;
-                $projet['currentSprint']['dateFin'] = substr($projet['currentSprint']['dateFin'], 0, 10);
+                $projet['currentSprint']['dateFin'] = date("d/m/Y", strtotime(substr($projet['currentSprint']['dateFin'], 0, 10)));
               }
             }
             
