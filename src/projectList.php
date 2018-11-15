@@ -30,8 +30,18 @@
           require 'connect.php';
 
           $query = "SELECT * FROM Projet";
-          foreach($conn->query($query) as $row){
-            echo "<tr><th><a href=''>".$row['nom']."</a><button type='button' id='edit-btn'>Edit</button><button type='button' id='delete-btn'>Delete</button></th><th></th><th></th><th></th></tr>";
+          foreach($conn->query($query) as $projet){
+
+            $query = "SELECT Sprint.idSprint, Sprint.nom, Sprint.dateDebut, Sprint.dateFin, Sprint.idProjet FROM Sprint JOIN Projet ON Projet.idProjet = Sprint.idProjet WHERE Sprint.idProjet = ".$projet['idProjet'];
+            foreach($conn->query($query) as $sprint){
+              if((strtotime($sprint['dateDebut']) < time()) && strtotime($sprint['dateFin']) > time()){
+                $projet['currentSprint'] = $sprint;
+                $projet['currentSprint']['dateFin'] = substr($projet['currentSprint']['dateFin'], 0, 10);
+              }
+            }
+            
+            echo "<tr><th><a href=''>".$projet['nom']."</a><button type='button' id='edit-btn'>Edit</button><button type='button' id='delete-btn'>Delete</button></th><th>".$projet['currentSprint']['nom']."</th><th></th><th>".$projet['currentSprint']['dateFin']."</th></tr>";
+
           }
         ?> 
 
