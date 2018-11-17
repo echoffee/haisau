@@ -30,9 +30,9 @@ script :
                 - curl localhost:8080
                 - curl localhost:4444
                 - curl localhost:8081
-                - echo "Starting tests..."
-                - sh execute_db.sh
+                - echo "Starting DB tests..."
+                - sh execute_tests_db.sh
                 - echo "Installing Nightwatch..."
                 - npm install nightwatch
-                - echo "Starting nightwatch tests..."
-                - sh execute_e2e.sh
+                - echo "Starting E2E tests..."
+                - sh execute_tests_e2e.sh
