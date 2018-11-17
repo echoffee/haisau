@@ -7,9 +7,14 @@ addons:
 services:
         - docker
 
-language: python
+language: 
+        - python
+        - node_js
 python:
         - "3.3"
+node_js:
+        - "iojs"
+        - "7"
 before_install:
         - sudo /etc/init.d/mysql stop
         - pwd
@@ -26,4 +31,8 @@ script :
                 - curl localhost:4444
                 - curl localhost:8081
                 - echo "Starting tests..."
-                - python tests/*.py
+                - sh execute_db.sh
+                - echo "Installing Nightwatch..."
+                - npm install nightwatch
+                - echo "Starting nightwatch tests..."
+                - sh execute_e2e.sh
