@@ -36,8 +36,8 @@ services:
     ports:
       - '8081:80'
 
-  chrome-selenium:
-    image: selenium/node-chrome:3.14.0-gallium
+  driver-selenium:
+    image: selenium/node-chrome
     volumes:
       - ./shm:/dev/smh
     depends_on:

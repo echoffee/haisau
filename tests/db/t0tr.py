@@ -27,7 +27,7 @@ def test_incorrect_insert(table, params, values):
         print("Wrong entry didn't trigger error : INSERT INTO " + table + " (" + ") VALUES " + values)
         sys.exit(1)
     except mysql.connector.Error as err:
-        print("Error ok : " + format(err))
+        print("Expected error, it's okay : " + format(err))
 
 
 

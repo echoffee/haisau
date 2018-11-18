@@ -33,7 +33,8 @@ CREATE TABLE UserStory (
 	priorite varchar(16) NOT NULL,
 	difficulte int,
 	idProjet int NOT NULL,
-	PRIMARY KEY (idUserStory)
+	PRIMARY KEY (idUserStory),
+	FOREIGN KEY (idProjet) REFERENCES Projet(idProjet)
 );
 CREATE TABLE Tache (
 	idTache int NOT NULL AUTO_INCREMENT,
