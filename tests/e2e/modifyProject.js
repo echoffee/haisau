@@ -1,6 +1,12 @@
 module.exports = {
     'Modify Project' : function (client) {
         client
+            .url("http://webserver:80/createProject.php")
+            .pause(1000)
+            .setValue("input[name='projectName']", 'DummyProjectName')
+            .setValue("input[name='sprintDuration']", 42)
+            .click("input[id='bCreate']")
+            .pause(1000)
             .url("http://webserver:80/projectList.php")
             .waitForElementVisible("body", 1000)
             .assert.elementPresent("a[href*='modifyProject'][href*='DummyProjectName']")
