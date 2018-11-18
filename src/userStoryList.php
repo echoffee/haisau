@@ -31,7 +31,7 @@
 
     <div class="container">
     <div class="row justify-content-md-center">
-    <a href="http://localhost:8080/addUserStory.php" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Add new user story</a> 
+    <a href="addUserStory.php" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Add new user story</a> 
     </div>
     </div>
     <br>
