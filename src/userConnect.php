@@ -18,13 +18,12 @@ if (isset($_POST['login_user']))
         $count = $stmt->rowCount();
         if($count <= 0) // query is empty
         {
-		echo 'connexion échoué';
+		echo 'Error :'; //Missing real message
         }
         else 
         {
             $row = $stmt->fetch(); //fetch query parm into row array
             header('Location: projectList.php'); 
-            echo "l'utilisateur ".$row['login']. " est connecté avec le mail : ". $row['mail']."<br />";
         }
 
 }

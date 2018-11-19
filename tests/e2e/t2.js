@@ -1,0 +1,37 @@
+module.exports = {
+    'Connect User' : function (client) {
+        client
+            .url("http://webserver:80/index.php")
+            .waitForElementVisible("body", 1000)
+            .assert.title("Login")
+            .assert.elementPresent("input[name='username']")
+            .assert.elementPresent("input[name='password']")
+            .assert.elementPresent("button[name='login_user']")
+            .setValue("input[name='username']", "kaede")
+            .setValue("input[name='password']", "takagaki")
+            .click("button[name='login_user']")
+            .pause(1000)
+            .assert.title("Project List")
+            .url("http://webserver:80/index.php")
+            .pause(1000)
+            .setValue("input[name='username']", "kaede")
+            .click("button[name='login_user']")
+            .pause(1000)
+            .assert.containsText("body", "Error")
+            .assert.elementPresent("a[href='index.php']")
+            .url("http://webserver:80/index.php")
+            .pause(1000)
+            .setValue("input[name='password']", "takagaki")
+            .click("button[name='login_user']")
+            .pause(1000)
+            .assert.containsText("body", "Error")
+            .assert.elementPresent("a[href='index.php']")
+            .url("http://webserver:80/index.php")
+            .pause(1000)
+            .click("button[name='login_user']")
+            .pause(1000)
+            .assert.containsText("body", "Error")
+            .assert.elementPresent("a[href='index.php']")
+            .end();
+    }
+};
