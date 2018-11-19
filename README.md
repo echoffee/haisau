@@ -46,9 +46,29 @@ L'application tournera sur la machine locale en utilisant ces ports :
 
 ### Effectuer les tests automatiques
 
-Après avoir lancer les conteneurs, les scripts de tests Python situés dans le répertoire `tests/` peuvent être
-lancés via Python. Ces tests font appel à la librairie `selenium` et `mysql-connector`. Pour les installer via `pip` :
-```
-pip install selenium mysql-connector   
-```
+Il y a deux types de tests pour ce projet, ceux sur la base de donnée réalisés en Python avec la librairie `mysql-connector` 
+ainsi que les tests E2E réalisés avec `selenium` via `nightwatch`.
 
+#### Tests sur base de donnée
+
+  1. Installer `mysql-connector` ([pip](https://pip.pypa.io/en/stable/installing/) nécessaire) :
+  ```
+  pip install mysql-connector
+  ```
+  
+  2. Lancer les tests :
+  ```
+  sh execute_tests_db.sh
+  ```
+
+#### Tests E2E
+
+  1. Installer `nightwatch` ([Node.js](https://nodejs.org/en/download/) nécessaire) :
+  ```
+  npm install nightwatch
+  ```
+  
+  2. Lancer les tests :
+  ```
+  sh execute_tests_e2e.sh
+  ```
