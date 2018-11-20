@@ -24,7 +24,8 @@ CREATE TABLE Sprint (
 	dateDebut timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	dateFin timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	idProjet int NOT NULL,
-	PRIMARY KEY (idSprint)
+	PRIMARY KEY (idSprint),
+	FOREIGN KEY (idProjet) REFERENCES Projet(idProjet)
 );
 CREATE TABLE UserStory (
 	idUserStory int NOT NULL AUTO_INCREMENT,
@@ -41,7 +42,8 @@ CREATE TABLE Tache (
 	nom text NOT NULL,
 	cout decimal NOT NULL,
 	statut varchar(16) NOT NULL,
-	idProjet int NOT NULL,
-	PRIMARY KEY (idTache)
+	idSprint int NOT NULL,
+	PRIMARY KEY (idTache),
+	FOREIGN KEY (idSprint) REFERENCES Sprint(idSprint)
 );
 INSERT INTO `Utilisateur` (`idUtilisateur`, `login`, `password`, `mail`) VALUES (NULL, 'admin', 'admin', 'admin@mail.com');
