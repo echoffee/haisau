@@ -40,6 +40,7 @@ CREATE TABLE UserStory (
 CREATE TABLE Tache (
 	idTache int NOT NULL AUTO_INCREMENT,
 	nom text NOT NULL,
+	description text NOT NULL,
 	cout decimal NOT NULL,
 	statut varchar(16) NOT NULL,
 	idSprint int NOT NULL,
