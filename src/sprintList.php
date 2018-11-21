@@ -30,15 +30,22 @@ foreach($conn->query($query) as $row){
 			    <th>Start Date</th>
 			    <th>End Date</th>
 			    <th>Difficulty</th>
+			    <th>State</th>
 	    	</tr>
 
 	    	<?php
-				$query = "SELECT * FROM Sprint WHERE Sprint.idProjet = ". $projet['idProjet'];
+				$query = "SELECT * FROM Sprint WHERE Sprint.idProjet = ". $projet['idProjet'] ." ORDER BY Sprint.dateDebut";
 				foreach($conn->query($query) as $sprint){
-					$sprint['dateDebut'] = date("d/m/Y", strtotime(substr($sprint['dateDebut'], 0, 10)));
-					$sprint['dateFin'] = date("d/m/Y", strtotime(substr($sprint['dateFin'], 0, 10)));
 					$sprint['nbTasks'] = 0;
 					$sprint['difficulty'] = 0;
+					$sprint['state'] = "STATE";
+
+					if(strtotime($sprint['dateFin']) < time()) $sprint['state'] = "PREVIOUS";
+					else if(strtotime($sprint['dateDebut']) < time()) $sprint['state'] = "CURRENT";
+					else $sprint['state'] = "NEXT";
+
+					$sprint['dateDebut'] = date("d/m/Y", strtotime(substr($sprint['dateDebut'], 0, 10)));
+					$sprint['dateFin'] = date("d/m/Y", strtotime(substr($sprint['dateFin'], 0, 10)));
 
 					$query = "SELECT cout FROM Tache JOIN Sprint ON Tache.idSprint = Sprint.idSprint WHERE Tache.idSprint = ".$sprint['idSprint'];
 					foreach($conn->query($query) as $task){
@@ -46,7 +53,11 @@ foreach($conn->query($query) as $row){
 						$sprint['difficulty'] = $sprint['difficulty'] + $task['cout'];
 					}
 
-					echo "<tr><th>".$sprint['nom']."</th><th>".$sprint['nbTasks']."</th><th>".$sprint['dateDebut']."</th><th>".$sprint['dateFin']."</th><th>".$sprint['difficulty']."</th></tr>";
+					echo "<tr><th>".$sprint['nom']."</th><th>".$sprint['nbTasks']."</th><th>".$sprint['dateDebut']."</th><th>".$sprint['dateFin']."</th><th>".$sprint['difficulty']."</th><th>".$sprint['state']."</th><th><button type='button' id='create-sprint-btn '";
+
+					if($sprint['state'] == "PREVIOUS") echo "disabled";
+
+					echo ">Add Tasks</button><button type='button' id='create-sprint-btn'>Delete</button></th></tr>";
 				}
 			?>
 
