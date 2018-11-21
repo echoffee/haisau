@@ -59,7 +59,7 @@
                   echo "<td>" . $row['difficulte'] . "</td>";
                   echo "<td>";
                   echo '<a href="updateUserStory.php?id='.$row['idUserStory'].' "class="btn btn-success btn-sm">update</a> &nbsp;';               
-                  echo '<a href="delete.php?id='.$row['idUserStory'].' " class="btn btn-danger btn-sm">delete</a>';                
+                  echo '<a href="deleteUserStory.php?id='.$row['idUserStory'].' " class="btn btn-danger btn-sm">delete</a>';                
                   echo "</td>";
                   echo "</tr>";
             }
