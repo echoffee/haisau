@@ -9,7 +9,7 @@ if (isset($_POST['create_user']))
     $email_address = !empty($_POST['email-address']) ? trim($_POST['email-address']) : null;
 
        //Retrieve the user account information for the given username.
-	if ($username != null && $password != null){
+	if ($username != null && $password != null && $email_address != null){
         	$stmt = $conn -> query("INSERT INTO Utilisateur (login, password, mail) VALUES ( '$username', '$password', '$email_address');");
 	}
 
