@@ -62,7 +62,7 @@
               $projet['nbTachesTotal'] = "";
             }
 
-            echo "<tr><th><a name='". $projet['nom']."' href='projectDetails.php?id=". $projet['idProjet'] ."'>".$projet['nom']."</a><a href='modifyProject.php?id=".$projet['idProjet']."'><button type='button' id='edit-btn'>Edit</button></a><a href='deleteProject.php?id=".$projet['idProjet']."'><button type='button' id='delete-btn'>Delete</button></a></th><th>".$projet['currentSprint']['nom']."</th><th>".$projet['nbTachesDone']."/".$projet['nbTachesTotal']."</th><th>".$projet['currentSprint']['dateFin']."</th></tr>";
+            echo "<tr><th><a name='". $projet['nom']."' href='projectDetails.php?id=". $projet['idProjet'] ."'>".$projet['nom']."</a><a name='" . $projet['nom'] . "' href='modifyProject.php?id=".$projet['idProjet']."'><button type='button' id='edit-btn'>Edit</button></a><a href='deleteProject.php?id=".$projet['idProjet']."'><button type='button' id='delete-btn'>Delete</button></a></th><th>".$projet['currentSprint']['nom']."</th><th>".$projet['nbTachesDone']."/".$projet['nbTachesTotal']."</th><th>".$projet['currentSprint']['dateFin']."</th></tr>";
 
           }
         ?> 
