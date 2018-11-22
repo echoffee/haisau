@@ -19,10 +19,10 @@
 
       <table style="width:100%">
         <tr>
-          <th>Project Name</th>
-          <th>Current Sprint Name</th>
-          <th>Progress</th>
-          <th>Current Sprint End Date</th>
+          <th name='ProjectNameHead'>Project Name</th>
+          <th name='SprintNameHead'>Current Sprint Name</th>
+          <th name='ProgressHead'>Progress</th>
+          <th name='SprintDateEndHead'>Current Sprint End Date</th>
         </tr>
 
         <?php
