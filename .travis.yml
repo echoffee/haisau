@@ -32,7 +32,7 @@ script :
                 - curl localhost:8081
                 - echo "Starting DB tests..."
                 - sh execute_tests_db.sh
-                - echo "Installing Nightwatch..."
-                - npm install nightwatch
+                - echo "Installing Node dependencies..."
+                - npm install nightwatch sha1
                 - echo "Starting E2E tests..."
                 - sh execute_tests_e2e.sh
