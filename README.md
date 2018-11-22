@@ -63,9 +63,9 @@ ainsi que les tests E2E réalisés avec `selenium` via `nightwatch`.
 
 #### Tests E2E
 
-  1. Installer `nightwatch` et `sha1` ([Node.js](https://nodejs.org/en/download/) nécessaire) :
+  1. Installer les dépendances ([Node.js](https://nodejs.org/en/download/) nécessaire) :
   ```
-  npm install nightwatch sha1
+  npm install nightwatch mysql sha1
   ```
   
   2. Lancer les tests :

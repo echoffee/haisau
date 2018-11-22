@@ -33,6 +33,6 @@ script :
                 - echo "Starting DB tests..."
                 - sh execute_tests_db.sh
                 - echo "Installing Node dependencies..."
-                - npm install nightwatch sha1
+                - npm install nightwatch sha1 mysql
                 - echo "Starting E2E tests..."
                 - sh execute_tests_e2e.sh
