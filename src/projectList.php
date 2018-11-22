@@ -32,8 +32,6 @@
           $query = "SELECT * FROM Projet";
           foreach($conn->query($query) as $projet){
 
-            //var_dump($projet);
-
             $query = "SELECT Sprint.idSprint, Sprint.nom, Sprint.dateDebut, Sprint.dateFin, Sprint.idProjet FROM Sprint JOIN Projet ON Projet.idProjet = Sprint.idProjet WHERE Sprint.idProjet = ".$projet['idProjet'];
             foreach($conn->query($query) as $sprint){
               if((strtotime($sprint['dateDebut']) < time()) && strtotime($sprint['dateFin']) > time()){
@@ -41,7 +39,6 @@
                 $projet['currentSprint']['dateFin'] = date("d/m/Y", strtotime(substr($projet['currentSprint']['dateFin'], 0, 10)));
               }
             }
-            //var_dump($projet['currentSprint']);
 
             if(!empty($projet['currentSprint'])){
               $query = "SELECT COUNT(*) FROM Tache JOIN Sprint ON Sprint.idSprint = Tache.idSprint WHERE Tache.statut LIKE 'DONE' AND Tache.idSprint = ".$projet['currentSprint']['idSprint'];
@@ -79,8 +76,6 @@
     function deleteProject(id) {
     	if (confirm('Are you sure you want to delete this project?')) {
     		document.location.href='deleteProject.php?id='+id;
-		} else {
-    		
 		}
     }
     </script>
