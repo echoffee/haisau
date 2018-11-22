@@ -62,7 +62,7 @@
               $projet['nbTachesTotal'] = "";
             }
 
-            echo "<tr><th><a name='". $projet['nom']."' href='projectDetails.php?id=". $projet['idProjet'] ."'>".$projet['nom']."</a><a name='" . $projet['nom'] . "' href='modifyProject.php?id=".$projet['idProjet']."'><button type='button' id='edit-btn'>Edit</button></a><a href='deleteProject.php?id=".$projet['idProjet']."'><button type='button' id='delete-btn'>Delete</button></a></th><th>".$projet['currentSprint']['nom']."</th><th>".$projet['nbTachesDone']."/".$projet['nbTachesTotal']."</th><th>".$projet['currentSprint']['dateFin']."</th></tr>";
+            echo "<tr><th><a name='". $projet['nom']."' href='projectDetails.php?id=". $projet['idProjet'] ."'>".$projet['nom']."</a><a name='" . $projet['nom'] . "' href='modifyProject.php?id=".$projet['idProjet']."'><button type='button' id='edit-btn'>Edit</button></a><button type='button' id='delete-btn' onClick='test(".$projet['idProjet'].")'>Delete</button></th><th>".$projet['currentSprint']['nom']."</th><th>".$projet['nbTachesDone']."/".$projet['nbTachesTotal']."</th><th>".$projet['currentSprint']['dateFin']."</th></tr>";
 
           }
         ?> 
@@ -74,6 +74,16 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <script>
+    function test(id) {
+    	if (confirm('Are you sure you want to delete this project?')) {
+    		document.location.href='deleteProject.php?id='+id;
+		} else {
+    		
+		}
+    }
+    </script>
 
   </body>
 </html>

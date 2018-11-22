@@ -11,6 +11,7 @@ $result = $conn->exec($query);
 var_dump($query);
 if ($result !== false) { 
 	echo "Project deleted successfully.";
+	header('Location: projectList.php');
 }
 else {
 	echo "An error occured while deleting the project";
@@ -22,6 +23,7 @@ $result = $conn->exec($query);
 var_dump($query);
 if ($result !== false) { 
 	echo "Project deleted successfully.";
+	header('Location: projectList.php');
 }
 else {
 	echo "An error occured while deleting the project";
@@ -33,6 +35,7 @@ $result = $conn->exec($query);
 var_dump($query);
 if ($result !== false) { 
 	echo "Project deleted successfully.";
+	header('Location: projectList.php');
 }
 else {
 	echo "An error occured while deleting the project";
@@ -44,10 +47,9 @@ $result = $conn->exec($query);
 var_dump($query);
 if ($result !== false) { 
 	echo "Project deleted successfully.";
+	header('Location: projectList.php');
 }
 else {
 	echo "An error occured while deleting the project";
 }
-
-header('Location: projectList.php');
 ?>
