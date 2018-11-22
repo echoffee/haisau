@@ -35,10 +35,18 @@ foreach($conn->query($query) as $row){
 	    	<?php
 	    		$query = "SELECT * FROM Tache WHERE Tache.idSprint = ".$sprint['idSprint'];
 	    		foreach($conn->query($query) as $task){
-	    			echo "<tr><th>".$task['nom']."</th><th>".$task['description']."</th><th>".$task['cout']."</th><th>".$task['statut']."</th><th><button id='delete-task-btn'>Delete</button></th></tr>";
+	    			echo "<tr><th>".$task['nom']."</th><th>".$task['description']."</th><th>".$task['cout']."</th><th>".$task['statut']."</th><th><button id='edit-task-btn'>Edit</button><button id='delete-task-btn' onClick='deleteTask(".$task['idTache'].")'>Delete</button></th></tr>";
 	    		}
 	    	?>
 
 		</table>
+
+	<script>
+    function deleteTask(id) {
+    	if (confirm('Are you sure you want to delete this task?')) {
+    		document.location.href='deleteTask.php?id='+id;
+		}
+    }
+    </script>
 	</body>
 </html>
