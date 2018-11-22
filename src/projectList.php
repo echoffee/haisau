@@ -1,3 +1,6 @@
+<?php
+ require('checkUserConnect.php');
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -10,10 +13,21 @@
 
     <title>Project List</title>
   </head>
+  &nbsp;
+  <div class="container">
   <body class="bg-white">
-    <p>
-      <h1>List of your current projects</h1>
-    </p>
+    <div class="row">
+    <div class="col-8">
+    <h1>List of your current projects</h1>
+    </div>
+    <div class="col-4">
+    <?php
+    include("userActions.php"); 
+    ?>
+    </div>
+    </div>
+    </div>
+    </div>
 
      <button type="button" id="create-project-btn" onClick="document.location.href='createProject.php'">New Project</button>
 

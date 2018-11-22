@@ -1,4 +1,5 @@
 <?php
+require('checkUserConnect.php');
 session_start();
 require 'connect.php';
 $query = "SELECT * FROM Sprint WHERE Sprint.idSprint = ".$_GET['id'];

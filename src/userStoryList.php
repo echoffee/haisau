@@ -1,4 +1,5 @@
 <?php 
+require('checkUserConnect.php');
 //retrive clicked project id and set it as global variable 
  require "connect.php";
   session_start(); 

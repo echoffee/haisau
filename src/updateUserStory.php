@@ -1,4 +1,5 @@
 <?php 
+require('checkUserConnect.php');
  require "connect.php";
   session_start(); 
   $_SESSION["idUserStory"] = $_GET['id'];

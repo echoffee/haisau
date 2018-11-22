@@ -23,6 +23,8 @@ if (isset($_POST['login_user']))
         else 
         {
             $row = $stmt->fetch(); //fetch query parm into row array
+            $_SESSION['login'] = $username;
+            $_SESSION['password'] = $password;
             header('Location: projectList.php'); 
         }
 

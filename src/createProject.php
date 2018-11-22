@@ -1,3 +1,6 @@
+<?php
+ require('checkUserConnect.php');
+?>
 <html>
  <body>
   <p>
