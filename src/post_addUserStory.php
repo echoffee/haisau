@@ -10,7 +10,7 @@ if (isset($_POST['add_us']))
     $desUs = $_POST['desc'];
     $prioUs = $_POST['prio'];
     $diffUs = $_POST['diff'];
-    $idproject = $_SESSION["idProject"];;
+    $idproject = $_SESSION["idProject"];
 
 
     $query = "INSERT INTO UserStory (`num`, `description`, `priorite`, `difficulte`, `idProjet`)

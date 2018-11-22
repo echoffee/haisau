@@ -31,7 +31,8 @@
 
     <div class="container">
     <div class="row justify-content-md-center">
-    <a href="addUserStory.php" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Add new user story</a> 
+    <a href="addUserStory.php" class="btn btn-primary btn-md active" role="button" aria-pressed="true">Add new user story</a> &nbsp;
+    <a href="projectList.php" class="btn btn-primary btn-md active" role="button" aria-pressed="true">Back</a>
     </div>
     </div>
     <br>
@@ -57,8 +58,8 @@
                   echo "<td>" . $row['priorite'] . "</td>";
                   echo "<td>" . $row['difficulte'] . "</td>";
                   echo "<td>";
-                  echo '<a href="update.php?id='.$row['idUserStory'].' "class="btn btn-success btn-sm">update</a> &nbsp;';               
-                  echo '<a href="delete.php?id='.$row['idUserStory'].' " class="btn btn-danger btn-sm">delete</a>';                
+                  echo '<a href="updateUserStory.php?id='.$row['idUserStory'].' "class="btn btn-success btn-sm">update</a> &nbsp;';               
+                  echo '<a href="deleteUserStory.php?id='.$row['idUserStory'].' " class="btn btn-danger btn-sm">delete</a>';                
                   echo "</td>";
                   echo "</tr>";
             }

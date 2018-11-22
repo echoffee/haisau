@@ -53,11 +53,11 @@ foreach($conn->query($query) as $row){
 						$sprint['difficulty'] = $sprint['difficulty'] + $task['cout'];
 					}
 
-					echo "<tr><th>".$sprint['nom']."</th><th>".$sprint['nbTasks']."</th><th>".$sprint['dateDebut']."</th><th>".$sprint['dateFin']."</th><th>".$sprint['difficulty']."</th><th>".$sprint['state']."</th><th><button type='button' id='create-sprint-btn '";
+					echo "<tr><th>".$sprint['nom']."</th><th>".$sprint['nbTasks']."</th><th>".$sprint['dateDebut']."</th><th>".$sprint['dateFin']."</th><th>".$sprint['difficulty']."</th><th>".$sprint['state']."</th><th><a href='taskList.php?id=". $sprint['idSprint'] ."'><button type='button' id='create-sprint-btn '";
 
 					if($sprint['state'] == "PREVIOUS") echo "disabled";
 
-					echo ">Add Tasks</button><button type='button' id='create-sprint-btn'>Delete</button></th></tr>";
+					echo ">Add Tasks</button><button type='button' id='create-sprint-btn'>Delete</button></a></th></tr>";
 				}
 			?>
 
