@@ -135,14 +135,14 @@ et un état dans un champ "State" qui sera toujours initialisé par la valeur
 TODO. Un bouton "Delete task" à côté de chaque task permettra de supprimer la
 tâche en question.
 
-### inviteUser.pho
+### inviteUser.php
 
 Contient un formulaire où l'on peut entrer une adresse email d'un utilisateur
 à inviter via un champ nommé "Email adress" et un bouton "Invite to the project"
 situé juste en dessous du champ. Le projet en question sera référencé par son
 nom en tant que paramètre de l'URL.
 
-### acceptInvite.pho
+### acceptInvite.php
 
 Contient une page avec un texte "Do you want to join the project " suivi du nom
 du projet auquel l'utilisateur est invité, puis deux boutons en dessous "Accept"
@@ -152,11 +152,11 @@ projets projectList.php où le projet auquel il participe désormais apparaît
 s'il a accepté l'invitation, sinon il ne voit que sa liste de projet auquel il
 participait déjà.
 
-### connect.php
+### connect.php
 
 Contient le code qui permet d'établir une connexion vers la base de donnée mysql.
 
-### functions.php
+### functions.php
 
 Contient un ensemble de fonctions disponibles pour éviter la duplication de
 code.
