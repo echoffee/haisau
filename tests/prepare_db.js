@@ -7,7 +7,8 @@ o.connect();
     var sqlProjet = "INSERT INTO Projet (nom, dureeSprint) VALUES ?";
     var valuesProjet = [
         ['T4DummyProject', 42],
-        ['T6DummyProject', 17]
+        ['T6DummyProject', 17],
+        ['T7DummyProject', 346]
     ];
     o.query(sqlProjet, [valuesProjet], function (err, result) {
         if (err) throw err;
