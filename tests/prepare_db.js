@@ -16,6 +16,7 @@ o.connect();
 
     var sqlUsers = "INSERT INTO Utilisateur (login, password, mail) VALUES ?";
     var valuesUsers = [
+        ['TestUser', sha1('KaedeTakagaki'), 'test@bidoof.nico'],
         ['T2kaede', sha1('T2takagaki'), 'T2user@bidoof.nico']
     ];
     o.query(sqlUsers, [valuesUsers], function (err, result) {
