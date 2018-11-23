@@ -40,14 +40,14 @@ Pour déployer les conteneurs :
 
 L'application tournera sur la machine locale en utilisant ces ports :
 - **localhost:8080** : Interface de l'application
-- **localhost:8081** : Interface `phpmyadmin` pour explorer la base de données
+- **localhost:8081** : Interface [phpMyAdmin](https://www.phpmyadmin.net/) pour explorer la base de données
 - **localhost:4444** : Interface "console" de Selenium pour effectuer des tests
 
 
 ### Effectuer les tests automatiques
 
 Il y a deux types de tests pour ce projet, ceux sur la base de donnée réalisés en Python avec la librairie `mysql-connector` 
-ainsi que les tests E2E réalisés avec `selenium` via `nightwatch`.
+ainsi que les tests E2E réalisés avec [Selenium](https://www.seleniumhq.org/) via [Nightwatch](http://nightwatchjs.org/).
 
 #### Tests sur base de donnée
 
