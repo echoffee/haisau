@@ -10,7 +10,7 @@ Sprint(__idSprint__, nom, dateDebut, dateFin, _#idProjet_)
 
 UserStory(__idUserStory__, num, description, priorite, difficulte, _#idProjet_)
 
-Taches(__idTache__, nom, cout, statut, _#idProjet_)
+Taches(__idTache__, nom, description, cout, statut, _#idProjet_)
 
 ## Tests sur BDD
 
