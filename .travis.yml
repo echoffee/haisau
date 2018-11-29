@@ -3,10 +3,12 @@ addons:
   apt:
     packages:
       - docker-ce
+  sonarcloud:
+      organization: "echoffee-github"
 
 services:
         - docker
-
+dist: trusty
 language: 
         - python
         - node_js
@@ -25,6 +27,7 @@ before_install:
         - pip install mysql-connector
 
 script :
+                - sonar-scanner
                 - echo "Waiting a bit before pinging the containers..."
                 - sleep 15
                 - curl localhost:8080
