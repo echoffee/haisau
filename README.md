@@ -1,6 +1,7 @@
 # haisau
 [![Build Status](https://travis-ci.com/echoffee/haisau.svg?branch=master)](https://travis-ci.com/echoffee/haisau)
-
+[![Sonar Bugs](https://sonarcloud.io/api/project_badges/measure?project=echoffee_haisau&metric=bugs)](https://sonarcloud.io/dashboard?id=echoffee_haisau)
+[![Sonar CS](https://sonarcloud.io/api/project_badges/measure?project=echoffee_haisau&metric=code_smells)](https://sonarcloud.io/dashboard?id=echoffee_haisau)
 Conduite de projet groupe 2.6.
 
 ## Issues et organisation
