@@ -13,6 +13,7 @@ module.exports = {
             .click("a[href*='modifyProject'][name*='T6DummyProject']")
             .pause(1000)
             //.url(function (res) {console.log(res.value);})
+            .assert.title("Modify Project : T6DummyProject")
             .assert.containsText("h1", "Modify project T6DummyProject")
             .setValue("input[name='projectName']", "T6DummyProjectEdited")
             .click("input[id='bCreate']")

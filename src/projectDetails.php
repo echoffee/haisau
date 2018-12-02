@@ -8,7 +8,11 @@ foreach($conn->query($query) as $row){
 }
 ?>
 
+<!DOCTYPE html>
 <html>
+ <head>
+  <title><?php echo $projet['nom'] ?> Project Details</title>
+ </head>
  <body>
   <p>
    <h1>Project <?php echo $projet['nom'] ?></h1>

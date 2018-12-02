@@ -1,7 +1,11 @@
 <?php
  require('checkUserConnect.php');
 ?>
+<!DOCTYPE html>
 <html>
+ <head>
+  <title>Project Creation</title>
+ </head>
  <body>
   <p>
    <h1>Create a new project</h1>

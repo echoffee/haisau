@@ -8,6 +8,7 @@ foreach($conn->query($query) as $row){
 }
 ?>
 
+<!DOCTYPE html>
 <html>
 	<head>
 		<!-- Required meta tags -->

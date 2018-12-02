@@ -10,6 +10,7 @@ require('checkUserConnect.php');
     $row = $result->fetch(); //row contins us info to put them in dom fields
   }
 ?>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <!-- Required meta tags -->

@@ -9,6 +9,7 @@ module.exports = {
             .pause(1000)
             .url("http://webserver:80/createProject.php")
             .waitForElementVisible("body", 1000)
+            .assert.title("Project Creation")
             .setValue("input[name='projectName']", 'DummyProjectName')
             .setValue("input[name='sprintDuration']", 42)
             .assert.elementPresent("input[id='bCreate']")
