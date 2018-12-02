@@ -22,7 +22,6 @@ email", "username", "password". Tout en bas du formulaire se trouve un bouton
 "Create an account" qui inscrit l'utilisateur dans la base de données. Une fois
 l'utilisateur inscrit, il pourra se connecter depuis index.php.
 
-
 ### disconnect.php
 
 Contient une page spécifiant que l'utilisateur s'est bien déconnecté. Cette page
@@ -132,8 +131,21 @@ s'il y en a (sinon en haut de page) permettra de créer une nouvelle tâche en
 renseignant un champ "Description" qui est une brève description de la tâche.
 Il sera automatiquement assigné à la tâche un identifiant par un champ "Task ID"
 et un état dans un champ "State" qui sera toujours initialisé par la valeur
-TODO. Un bouton "Delete task" à côté de chaque task permettra de supprimer la
-tâche en question.
+TODO. Un champ "Number of associated tests" sera également présent pour indiquer
+le nombre de tests associés à la tâche. Un bouton "Delete task" à côté de chaque
+task permettra de supprimer la tâche en question.
+
+### createTask.php
+
+Contient le formulaire de création d'une tâche, permettant de créer et
+d'assigner une tâche à un sprint. Le formulaire contiendra seulement un
+champ à renseigner qui sera une brève description de la tâche. En bas du
+formulaire se situeront deux boutons. Le premier bouton sera nommé "Add
+task", permettant de créer une tâche et de l'assigner au sprint auquel elle est
+associée, avec le champ "State" rempli par la valeur "TODO", et le champs
+"Number of associated tests" rempli par le nombre 0 par défaut. Le deuxième
+bouton quand à lui sera nommé "Cancel" et permettra d'annuler la création de la
+tâche et redirige l'utilisateur vers la page taskList.php.
 
 ### inviteUser.php
 
@@ -151,6 +163,56 @@ fois le choix de l'utilisateur effectué, il est redirigé vers la liste des
 projets projectList.php où le projet auquel il participe désormais apparaît
 s'il a accepté l'invitation, sinon il ne voit que sa liste de projet auquel il
 participait déjà.
+
+### uploadRelease.php
+
+Contient une page avec trois boutons, le premier nommé "Upload" et ouvre un
+sélecteur de fichiers lorsque l'on clique dessus. Il permet à l'utilisateur de
+sélectionner la release de son projet qu'il veut uploader pour un sprint
+précis. Deux autres boutons sont présents en dessous de ce premier bouton, ce
+sont les boutons "Confirm" et "Cancel", permettant respectivement de valider
+l'upload du fichier sélectionné via le bouton plus haut, ou bien d'annuler
+l'upload et de revenir sur la page précédente, qui est la page du sprint du
+projet depuis lequel l'utilisateur voulait uploader sa release. Si l'utilisateur
+clique sur le bouton "Confirm" sans avoir choisi auparavant un fichier à
+uploader, alors un message d'erreur apparaît, "You must have choosen a file to
+upload first".
+
+### downloadRelease.php
+
+Contient une page avec deux boutons, le premier nommé "Download" et qui
+télécharge la release en question lorsque l'on clique dessus. Le deuxième bouton
+est le bouton "Cancel", permettant de revenir sur la page précédente, qui est la
+page du sprint du projet depuis lequel l'utilisateur voulait télécharger la
+release. Si l'utilisateur clique sur le bouton "Download" et qu'aucune release
+n'a été uploadée auparavant, alors un message d'erreur apparaît, "There is yet
+no avalaible release to download for this sprint".
+
+### createTest.php
+
+Contient le formulaire de création d'un test, permettant de créer et
+d'assigner un test à une tâche. Le formulaire contiendra seulement un
+champ à renseigner qui seront le nom du test, et une description du
+fonctionnement et du résultat attendu pour ce test. En bas du
+formulaire se situeront deux boutons. Le premier bouton sera nommé "Add
+test", permettant de créer un test et de l'assigner à la tâche auquel il est
+associé. Le deuxième bouton quand à lui sera nommé "Cancel" et permettra
+d'annuler la création du test et redirige l'utilisateur vers la page
+taskList.php.
+
+### reportBug.php
+
+Contient le formulaire de rapport de bug. Il contient une zone de texte qui sera
+à remplir par l'utilisateur qui expliquera un bug qu'il a rencontré sur le site,
+ainsi que deux boutons, "Report bug" et "Cancel" qui serviront respectivement à
+envoyer le rapport de bug dans la base de donnée pour le premier, et à annuler
+le rapport de bug pour le second. Si aucun texte n'est rentré dans la zone de
+texte et que l'utilisateur tente de cliquer sur le bouton "Report bug", un
+message d'erreur apparaît "You must have written a bug to report first".
+
+### burnDownChart.php
+
+
 
 ### connect.php
 
