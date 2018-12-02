@@ -41,14 +41,14 @@ Les fichiers.sh à la racine éxectuent une batterie de tests, .travis.yml perme
 
 ## Technologies utilisées
 L'application est codée en php et en html avec une structure LAMP
-On utilise Travis pour l'intégration continue
-Les tests sur la base de données se font en Python avec la librairie mysql-connector
-Les tests E2E sont effectués sur Selenium avec une surcouche Nightwatch
-Le déploiement de l'application se fait via Docker
+On utilise [Travis](https://travis-ci.com/) pour l'intégration continue et [Sonar](https://www.sonarqube.org/) évalue la qualité du code produit.
+Les tests sur la base de données se font en Python avec la librairie `mysql-connector`.
+Les tests E2E sont effectués sur un serveur [Selenium](https://www.seleniumhq.org/) avec le framework [Nightwatch](http://nightwatchjs.org/).
+Le déploiement de l'application se fait via [Docker](https://www.docker.com/).
 
 ## Déroulement des tasks
-Au début du sprint, une liste de tâches à réaliser est mise en place, puis chaque membre du projet réalise celles qu'il souhaite réaliser
-La liste des tâches est consultable sur le fichier markdown du sprint en cours et sur le dashboard, où chacun peut indiquer qui fait quelle tâche, leur statut et les commits associés.
+Au début du sprint, une liste de tâches à réaliser est mise en place, puis chaque membre du projet réalise celles qu'il souhaite réaliser.
+La liste des tâches est consultable sur le fichier markdown du sprint en cours et sur le [dashboard](https://github.com/echoffee/haisau/projects), où chacun peut indiquer qui fait quelle tâche, leur statut et les commits associés.
 
 ## Déroulement des tests
 
@@ -59,7 +59,7 @@ fichier `tests/prepare_db.js`.
 
 Chaque test est explicité avant leur réalisation dans le dossier `conduite/designs/tests`.
 
-Les tests peuvent être lancés en batterie via les scripts shell `execute_tests_*.db` présents
+Les tests peuvent être lancés en batterie via les scripts shell `execute_tests_<type>.db` présents
 à la racine du projet. Ces commandes sont exécutées par l'outil d'intégration continue à chaque
 push sur le dépôt.
 
@@ -79,5 +79,5 @@ Installation :
 
 ```
 
-Les versions suivront le modèle `<majeur>.<mineur>.<hotfix>`.
+Les versions suivront le modèle `<majeur>.<mineur>.<hotfix (optionnel)>`.
 Les issues couvertes sont référencées par leur identifiant.
