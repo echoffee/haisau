@@ -16,7 +16,9 @@ CREATE TABLE Projet (
 CREATE TABLE Travailler (
 	idUtilisateur int NOT NULL,
 	idProjet int NOT NULL,
-	PRIMARY KEY(idUtilisateur, idProjet)
+	PRIMARY KEY(idUtilisateur, idProjet),
+	FOREIGN KEY (idUtilisateur) REFERENCES Utilisateur(idUtilisateur) ON DELETE CASCADE,
+	FOREIGN KEY (idProjet) REFERENCES Projet(idProjet) ON DELETE CASCADE
 );
 CREATE TABLE Sprint (
 	idSprint int NOT NULL AUTO_INCREMENT,
@@ -25,7 +27,7 @@ CREATE TABLE Sprint (
 	dateFin timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	idProjet int NOT NULL,
 	PRIMARY KEY (idSprint),
-	FOREIGN KEY (idProjet) REFERENCES Projet(idProjet)
+	FOREIGN KEY (idProjet) REFERENCES Projet(idProjet) ON DELETE CASCADE
 );
 CREATE TABLE UserStory (
 	idUserStory int NOT NULL AUTO_INCREMENT,
@@ -35,7 +37,7 @@ CREATE TABLE UserStory (
 	difficulte int,
 	idProjet int NOT NULL,
 	PRIMARY KEY (idUserStory),
-	FOREIGN KEY (idProjet) REFERENCES Projet(idProjet)
+	FOREIGN KEY (idProjet) REFERENCES Projet(idProjet) ON DELETE CASCADE
 );
 CREATE TABLE Tache (
 	idTache int NOT NULL AUTO_INCREMENT,
@@ -45,6 +47,5 @@ CREATE TABLE Tache (
 	statut varchar(16) NOT NULL,
 	idSprint int NOT NULL,
 	PRIMARY KEY (idTache),
-	FOREIGN KEY (idSprint) REFERENCES Sprint(idSprint)
+	FOREIGN KEY (idSprint) REFERENCES Sprint(idSprint) ON DELETE CASCADE
 );
-INSERT INTO `Utilisateur` (`idUtilisateur`, `login`, `password`, `mail`) VALUES (NULL, 'admin', 'admin', 'admin@mail.com');

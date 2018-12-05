@@ -8,7 +8,6 @@
     $query = "DELETE FROM `UserStory` WHERE idUserStory = $idUs;";
      //working
     $result = $conn->exec($query);
-    echo $result;
     if ($result !== false) {
         echo $msgUserStoryUpdateSuccess;
         header($locUserStoryList($idproject)); 
