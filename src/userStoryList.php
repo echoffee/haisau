@@ -6,9 +6,9 @@ require('checkUserConnect.php');
   $_SESSION["idProject"] = $_GET['id'];
   $idProject = $_SESSION["idProject"];
   //get project name from id 
-  $query = $conn -> query("SELECT `nom` FROM `Projet` WHERE idProjet = '$idProject'");
+  $query = $conn -> query("SELECT `nom` FROM `Projet` WHERE idProjet = " . $idProject);
   $row = $query->fetch();
-  $row['nom'];
+  //$row['nom'];
 ?>
 <!doctype html>
 <html lang="en">
@@ -46,25 +46,23 @@ require('checkUserConnect.php');
           <th>Actions</th>
         </tr> 
         <?php
-        require 'connect.php';
+        require('connect.php');
         $sql = "SELECT  * FROM `UserStory`
-         WHERE `idProjet` = '$idProject'";
-         if($result = $conn->query($sql))
+         WHERE `idProjet` = " . $idProject;
+        $disp_line = function($content) { return "<td>" . $content . "</td>";};
+        $result = $conn->query($sql);
+         if($result !== false && $result->rowCount() > 0)
          {
-          if($result->rowCount() > 0)
-          {
             while($row = $result->fetch()){
-                  echo "<td>" . $row['num'] . "</td>";
-                  echo "<td>" . $row['description'] . "</td>";
-                  echo "<td>" . $row['priorite'] . "</td>";
-                  echo "<td>" . $row['difficulte'] . "</td>";
-                  echo "<td>";
-                  echo '<a href="updateUserStory.php?id='.$row['idUserStory'].' "class="btn btn-success btn-sm">update</a> &nbsp;';               
-                  echo '<a href="deleteUserStory.php?id='.$row['idUserStory'].' " class="btn btn-danger btn-sm">delete</a>';                
-                  echo "</td>";
+                  echo "<tr>";
+                  echo $disp_line($row['num']);
+                  echo $disp_line($row['description']);
+                  echo $disp_line($row['priorite']);
+                  echo $disp_line($row['difficulte']);
+                  $tmp =  '<a href="updateUserStory.php?id='.$row['idUserStory'].' class="btn btn-success btn-sm">update</a> &nbsp;'.' <a href="deleteUserStory.php?id='.$row['idUserStory'].' " class="btn btn-danger btn-sm">delete</a>';
+                  echo $disp_line($tmp);
                   echo "</tr>";
             }
-          }
          }
         ?>       
         </table>

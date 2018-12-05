@@ -2,15 +2,17 @@
 
 
 session_start();
+require '_strings.php';
 require 'connect.php';
+
+$strUserName = "username";
+$strPassword = "password";
 
 if (isset($_POST['login_user'])) 
 {  
-    $username = !empty($_POST['username']) ? trim($_POST['username']) : null;
-    $password = !empty($_POST['password']) ? $_POST['password'] : null;     
+    $username = !empty($_POST[$strUserName]) ? trim($_POST[$strUserName]) : null;
+    $password = !empty($_POST[$strPassword]) ? $_POST[$strPassword] : null;     
 	$password = sha1($password);
-    //echo $username ."<br>";
-    //echo $password ."<br>";
 
        //Retrieve the user account information for the given username.
 
@@ -23,8 +25,8 @@ if (isset($_POST['login_user']))
         else 
         {
             $row = $stmt->fetch(); //fetch query parm into row array
-            $_SESSION['login'] = $username;
-            $_SESSION['password'] = $password;
+            $_SESSION[$strSessionLogin] = $username;
+            $_SESSION[$strSessionPassword] = $password;
             header('Location: projectList.php'); 
         }
 
