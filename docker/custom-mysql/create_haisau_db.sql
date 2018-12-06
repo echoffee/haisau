@@ -16,7 +16,9 @@ CREATE TABLE Projet (
 CREATE TABLE Travailler (
 	idUtilisateur int NOT NULL,
 	idProjet int NOT NULL,
-	PRIMARY KEY(idUtilisateur, idProjet)
+	status varchar(255) NOT NULL,
+	FOREIGN KEY (idProjet) REFERENCES Projet(idProjet),
+	FOREIGN KEY (idUtilisateur) REFERENCES Utilisateur(idUtilisateur)
 );
 CREATE TABLE Sprint (
 	idSprint int NOT NULL AUTO_INCREMENT,
@@ -47,4 +49,3 @@ CREATE TABLE Tache (
 	PRIMARY KEY (idTache),
 	FOREIGN KEY (idSprint) REFERENCES Sprint(idSprint)
 );
-INSERT INTO `Utilisateur` (`idUtilisateur`, `login`, `password`, `mail`) VALUES (NULL, 'admin', 'admin', 'admin@mail.com');

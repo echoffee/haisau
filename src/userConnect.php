@@ -14,7 +14,7 @@ if (isset($_POST['login_user']))
 
        //Retrieve the user account information for the given username.
 
-        $stmt = $conn -> query("SELECT login, password, mail FROM Utilisateur where login = '$username' AND password = '$password'");
+        $stmt = $conn -> query("SELECT idUtilisateur, login, password, mail FROM Utilisateur where login = '$username' AND password = '$password'");
         $count = $stmt->rowCount();
         if($count <= 0) // query is empty
         {
@@ -23,6 +23,7 @@ if (isset($_POST['login_user']))
         else 
         {
             $row = $stmt->fetch(); //fetch query parm into row array
+            $_SESSION['idUtilisateur'] = $row['idUtilisateur']; 
             $_SESSION['login'] = $username;
             $_SESSION['password'] = $password;
             header('Location: projectList.php'); 
