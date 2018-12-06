@@ -25,12 +25,11 @@ if (isset($_POST['update_us']))
      //working
     $result = $conn->exec($query);
     echo $result;
-    if ($result == true) {
+    if ($result !== false) {
         echo "Us  updates successfully.";
         header("Location: userStoryList.php?id=".$idproject.""); 
-    }
-    else
+    }else{
         echo "An error occured while updating the us";
-
+    }
 }
 ?>
