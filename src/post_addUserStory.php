@@ -20,9 +20,8 @@ if (isset($_POST['add_us']))
     if ($result == 1) {
         echo "Us  created successfully.";
         header("Location: userStoryList.php?id=".$idproject.""); 
-    }
-    else
+    }else{
         echo "An error occured while creating the us";
-
+    }
 }
 ?>

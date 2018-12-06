@@ -17,6 +17,8 @@ module.exports = {
             .click("button[name='deleteProjectT7DummyProject']")
             .pause(100)
             .acceptAlert()
+            .pause(1000)
+            .assert.urlContains("projectList.php")
             .assert.elementNotPresent("a[name='T7DummyProject']")
             .end();
     }

@@ -35,8 +35,9 @@ foreach($conn->query($query) as $row){
 
 	    	<?php
 	    		$query = "SELECT * FROM Tache WHERE Tache.idSprint = ".$sprint['idSprint'];
+                $th_sep = "</th><th>";
 	    		foreach($conn->query($query) as $task){
-	    			echo "<tr><th>".$task['nom']."</th><th>".$task['description']."</th><th>".$task['cout']."</th><th>".$task['statut']."</th><th><button id='edit-task-btn'>Edit</button><button id='delete-task-btn' onClick='deleteTask(".$task['idTache'].")'>Delete</button></th></tr>";
+	    			echo "<tr><th>".$task['nom']. $th_sep .$task['description']. $th_sep .$task['cout']. $th_sep .$task['statut']."</th><th><button id='edit-task-btn'>Edit</button><button id='delete-task-btn' onClick='deleteTask(".$task['idTache'].")'>Delete</button></th></tr>";
 	    		}
 	    	?>
 

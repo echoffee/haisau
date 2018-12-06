@@ -166,33 +166,32 @@ participait déjà.
 
 ### uploadRelease.php
 
-Contient une page avec trois boutons, le premier nommé "Upload" et ouvre un
+Contient une page avec trois boutons, un premier nommé "Upload" qui ouvre un
 sélecteur de fichiers lorsque l'on clique dessus. Il permet à l'utilisateur de
 sélectionner la release de son projet qu'il veut uploader pour un sprint
-précis. Deux autres boutons sont présents en dessous de ce premier bouton, ce
-sont les boutons "Confirm" et "Cancel", permettant respectivement de valider
-l'upload du fichier sélectionné via le bouton plus haut, ou bien d'annuler
-l'upload et de revenir sur la page précédente, qui est la page du sprint du
-projet depuis lequel l'utilisateur voulait uploader sa release. Si l'utilisateur
-clique sur le bouton "Confirm" sans avoir choisi auparavant un fichier à
-uploader, alors un message d'erreur apparaît, "You must have choosen a file to
-upload first".
+précis. Les deux autres boutons sont les boutons "Confirm" et "Cancel", 
+permettant respectivement de valider l'upload du fichier sélectionné via le 
+bouton plus haut, ou bien d'annuler l'upload et de revenir sur la page précédente, 
+qui est la page du sprint du projet depuis lequel l'utilisateur voulait uploader sa 
+release. Si l'utilisateur clique sur le bouton "Confirm" sans avoir choisi auparavant 
+un fichier à uploader, alors un message d'erreur apparaît, "You must have choosen a 
+file to upload first".
 
 ### downloadRelease.php
 
-Contient une page avec deux boutons, le premier nommé "Download" et qui
+Contient une page avec deux boutons, le premier nommé "Download" qui
 télécharge la release en question lorsque l'on clique dessus. Le deuxième bouton
 est le bouton "Cancel", permettant de revenir sur la page précédente, qui est la
 page du sprint du projet depuis lequel l'utilisateur voulait télécharger la
 release. Si l'utilisateur clique sur le bouton "Download" et qu'aucune release
-n'a été uploadée auparavant, alors un message d'erreur apparaît, "There is yet
-no avalaible release to download for this sprint".
+n'a été uploadée auparavant, alors un message d'erreur apparaît, "There is no 
+release avalaible to download for this sprint yet".
 
 ### createTest.php
 
 Contient le formulaire de création d'un test, permettant de créer et
-d'assigner un test à une tâche. Le formulaire contiendra seulement un
-champ à renseigner qui seront le nom du test, et une description du
+d'assigner un test à une tâche. Le formulaire contiendra seulement 3
+champs à renseigner qui seront le nom du test, et une description du
 fonctionnement et du résultat attendu pour ce test. En bas du
 formulaire se situeront deux boutons. Le premier bouton sera nommé "Add
 test", permettant de créer un test et de l'assigner à la tâche auquel il est

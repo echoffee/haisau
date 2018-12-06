@@ -1,5 +1,6 @@
 <?php
- require('checkUserConnect.php');
+    require('_strings.php');
+    require('checkUserConnect.php');
 ?>
 <!doctype html>
 <html lang="en">
@@ -46,34 +47,34 @@
           $query = "SELECT * FROM Projet";
           foreach($conn->query($query) as $projet){
 
-            $query = "SELECT Sprint.idSprint, Sprint.nom, Sprint.dateDebut, Sprint.dateFin, Sprint.idProjet FROM Sprint JOIN Projet ON Projet.idProjet = Sprint.idProjet WHERE Sprint.idProjet = ".$projet['idProjet'];
+            $query = "SELECT Sprint.idSprint, Sprint.nom, Sprint.dateDebut, Sprint.dateFin, Sprint.idProjet FROM Sprint JOIN Projet ON Projet.idProjet = Sprint.idProjet WHERE Sprint.idProjet = ".$projet[$fldProjectId];
             foreach($conn->query($query) as $sprint){
-              if((strtotime($sprint['dateDebut']) < time()) && strtotime($sprint['dateFin']) > time()){
-                $projet['currentSprint'] = $sprint;
-                $projet['currentSprint']['dateFin'] = date("d/m/Y", strtotime(substr($projet['currentSprint']['dateFin'], 0, 10)));
+              if((strtotime($projet[$fldSprintDateStart]) < time()) && strtotime($projet[$fldSprintDateEnd]) > time()){
+                $projet[$fldProjectSprint] = $sprint;
+                $projet[$fldProjectSprint][$fldSprintDateEnd] = date("d/m/Y", strtotime(substr($projet[$fldProjectSprint][$fldSprintDateEnd], 0, 10)));
               }
             }
 
-            if(!empty($projet['currentSprint'])){
-              $query = "SELECT COUNT(*) FROM Tache JOIN Sprint ON Sprint.idSprint = Tache.idSprint WHERE Tache.statut LIKE 'DONE' AND Tache.idSprint = ".$projet['currentSprint']['idSprint'];
+            if(!empty($projet[$fldProjectSprint])){
+              $query = "SELECT COUNT(*) FROM Tache JOIN Sprint ON Sprint.idSprint = Tache.idSprint WHERE Tache.statut LIKE 'DONE' AND Tache.idSprint = ".$projet[$fldProjectSprint]['idSprint'];
               foreach($conn->query($query) as $taskCount){
-                $projet["nbTachesDone"] = $taskCount[0];
+                $projet[$fldProjectTaskDoneCount] = $taskCount[0];
               }
 
-              $query = "SELECT COUNT(*) FROM Tache JOIN Sprint ON Sprint.idSprint = Tache.idSprint WHERE Tache.idSprint = ".$projet['currentSprint']['idSprint'];
+              $query = "SELECT COUNT(*) FROM Tache JOIN Sprint ON Sprint.idSprint = Tache.idSprint WHERE Tache.idSprint = ".$projet[$fldProjectSprint]['idSprint'];
               foreach($conn->query($query) as $taskCount){
-                $projet["nbTachesTotal"] = $taskCount[0];
+                $projet[$fldProjectTaskCount] = $taskCount[0];
               }
             }
 
             else{
-              $projet['currentSprint']['nom'] = "No sprint planned";
-              $projet['currentSprint']['dateFin'] = "/";
-              $projet['nbTachesDone'] = "";
-              $projet['nbTachesTotal'] = "";
+              $projet[$fldProjectSprint][$fldSprintName] = "No sprint planned";
+              $projet[$fldProjectSprint][$fldSprintDateEnd] = "/";
+              $projet[$fldProjectTaskDoneCount] = "";
+              $projet[$fldProjectTaskCount] = "";
             }
 
-            echo "<tr><th><a name='". $projet['nom']."' href='projectDetails.php?id=". $projet['idProjet'] ."'>".$projet['nom']."</a><a name='" . $projet['nom'] . "' href='modifyProject.php?id=".$projet['idProjet']."'><button type='button' id='edit-btn'>Edit</button></a><button name='deleteProject" . $projet['nom'] . "' type='button' id='delete-btn' onClick='deleteProject(".$projet['idProjet'].")'>Delete</button></th><th>".$projet['currentSprint']['nom']."</th><th>".$projet['nbTachesDone']."/".$projet['nbTachesTotal']."</th><th>".$projet['currentSprint']['dateFin']."</th></tr>";
+            echo "<tr><th><a name='". $projet[$fldProjectName]."' href='projectDetails.php?id=". $projet[$fldProjectId] ."'>".$projet[$fldProjectName]."</a><a name='" . $projet[$fldProjectName] . "' href='modifyProject.php?id=".$projet[$fldProjectId]."'><button type='button' id='edit-btn'>Edit</button></a><button name='deleteProject" . $projet[$fldProjectName] . "' type='button' id='delete-btn' onClick='deleteProject(".$projet[$fldProjectId].")'>Delete</button></th><th>".$projet[$fldProjectSprint][$fldSprintName]."</th><th>".$projet[$fldProjectTaskDoneCount]."/".$projet[$fldProjectTaskCount]."</th><th>".$projet[$fldProjectSprint][$fldSprintDateEnd]."</th></tr>";
 
           }
         ?> 

@@ -2,13 +2,14 @@
 [![Build Status](https://travis-ci.com/echoffee/haisau.svg?branch=master)](https://travis-ci.com/echoffee/haisau)
 [![Sonar Bugs](https://sonarcloud.io/api/project_badges/measure?project=echoffee_haisau&metric=bugs)](https://sonarcloud.io/dashboard?id=echoffee_haisau)
 [![Sonar CS](https://sonarcloud.io/api/project_badges/measure?project=echoffee_haisau&metric=code_smells)](https://sonarcloud.io/dashboard?id=echoffee_haisau)
+
 Conduite de projet groupe 2.6.
 
 ## Issues et organisation
 Les différents fichiers traitant de l'organisation du projet se trouvent dans le répertoire `conduite/` à
 la racine du dépot.
 
-Specifications : [specs.md](https://github.com/echoffee/haisau/blob/master/conduite/documentation/specs.md)
+Specifications : [specs.md](https://github.com/echoffee/haisau/blob/master/conduite/documentation/specs.md).
 
 Issues : [issues.md](https://github.com/echoffee/haisau/blob/master/conduite/issues.md).
 

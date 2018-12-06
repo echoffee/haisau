@@ -14,23 +14,23 @@
     <div class ="container">
     <form action="post_addUserStory.php" method="post"> 
     <div class="form-group" >
-    <label for="numUs">Number</label>
+    <label for="numUs">US #</label>
     <input type="text" class="form-control" name="numUs">
     </div>
     <div class="form-group">
-    <label for="desc">description</label>
+    <label for="desc">Description</label>
     <textarea class="form-control" name="desc" rows="3"></textarea>
     </div>
     <div class="form-group">
-    <label for="exampleFormControlSelect1">Priorité</label>
+    <label for="exampleFormControlSelect1">Priority</label>
       <select class="form-control" name="prio">
         <option>Low</option>
-        <option>Medieum</option>
+        <option>Medium</option>
         <option>High</option>
       </select>
     </div>
     <div class="form-group">
-    <label for="diff">difficulte</label>
+    <label for="diff">Difficulty</label>
     <input type="text" class="form-control" name="diff">
     </div>
     <button type="submit" class="btn btn-primary btn-sm" name="add_us">Add</button> &nbsp;
