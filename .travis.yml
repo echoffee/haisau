@@ -38,14 +38,13 @@ script:
 - echo "Starting E2E tests..."
 - sh execute_tests_e2e.sh
 before_deploy:
-    - sudo apt install zip
-    - zip haisau.zip -r src/* config/* docker/* LICENSE README.md docker-compose.yml
+- sudo apt install zip
+- zip haisau.zip -r src/* config/* docker/* LICENSE README.md docker-compose.yml
 deploy:
   provider: releases
   api_key:
-    secure: xIm5lzdFTyS3Mz77up6oTEZxL6AkfhSugmN0YSp0QQF5HmQPlVwQfkc4cP9UiurJvdOUsKfODICa9PD5p5bPn0G7fELM9s4fyoBQexcALEbxUecP+t5iJpcbIM1UhCLHxZUJMdf9aalxhKYp9dyMRqDuE7ycxPtu+bxLCVkDyrsCOb0dEApbP2aggO/UhR7M56pfiQrL+5vqZzyrplnN6kzXSU8KVt9EsvwMian33fsZ3kAOE7npqhwaltGmWmQJfqknwVTXS4Y2LU0PQMzLYIvw8eeeBArEnR7haAE/wLOcZGDoyao2X06jtqoxWsjiPMDA6H6INtAF/CBMvYOgpDp08qMpB1b7Gy6lvqQ0nrLU5ob246vNUVj+5pe8GuIXT/+iekpr9CGEHNZQHdwztom3oEvAs6doErAwmVSMoRAJ4GM+87kJ9vLlLWG71FvpPdAExkQGBB32lqvCo1AzlWmqov612NioLkns9Qycb2eHdPEAkUi3QchA+0X03fDO/JSj9Mp13G5mqo2XRZQZ7e5zsu4hHQZPnygySNkI9wAKKKmBfMvEDs12Vmzfx076WPoeNIp62SDHkRuy+G/N6tgtwIJJXXJ+/mcSyE9zh3Ey+wnOWtRRxed8JZk+usfMyaqb5c2s/dISfk4SWf0WRNNdpNSi4PQORFCno+Rgs6I=
+    secure: j0sKfjJcF084fKCtTx48pArfEppQxfhnuQxcPRKAI/CbMLa1yIBgDc9m97w/muheZdFsgeyZcJHRD9gJ+JEHSpI4Oi6NoN8wTkKXdx3uxvwj4D+1a7UBCVzZZCkzJIrEWJ0srZA9d55xKM+mazEG2WrVe8YgIKpddaf+KbTlUtyNERdHLfiZAu86houUkUHejccJFbI9M3IRIMkflUx9BCK29X32zkW/tOCL1Zq7eAVgx0T0YajyKX5frSMgj1QgVkTObDxyF2Zn+61j1pHKQSHPJDW8qFTL4HV9VPxCBHHD5iLzZ1wvOTrFEyywGw9noohd4HBshJqEgR5LzSUfqQgrpxXIiHlkqkQKLDBHCJYxj/FSkQfVqNp0KvjhkbFaCWPts122PdbQRbfjdkcdtJOumOOkS7RFoGIwMueCRg5hIt+iPHZD5xYKcmEDE0MuOQYXzT1asLjfzeD1S+kN9Ffej05xa5UDuRsCeUq9RD3G0o5YA7HlYUoho2rFfn0R7jvMdugKUK0u9RkyJxKJb0OF4laF6zvz0VojmLj5jpEc9e+rosoI2MRpwbqL/OQ9vPLi9D526qKL714JldPUTBaoWywtlb2Cpu8eAhbTwCIdDJySxdTjitOBsY4EGiMcCvBDIXVSucSAQ2AK9abWk3/yrBv6NZBViH11N/NG3ZM=
   file: haisau.zip
-  skip_cleanup: true
   on:
-    repo: echoffee/haisau
     tags: true
+    repo: echoffee/haisau
