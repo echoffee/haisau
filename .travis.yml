@@ -2,40 +2,50 @@ sudo: required
 addons:
   apt:
     packages:
-      - docker-ce
+    - docker-ce
   sonarcloud:
-      organization: "echoffee-github"
-
+    organization: echoffee-github
 services:
-        - docker
+- docker
 dist: trusty
-language: 
-        - python
-        - node_js
+language:
+- python
+- node_js
 python:
-        - "3.3"
+- '3.3'
 node_js:
-        - "iojs"
-        - "7"
+- iojs
+- '7'
 before_install:
-        - sudo /etc/init.d/mysql stop
-        - pwd
-        - ls -la
-        - sudo docker-compose up -d
-        - docker --version
-        - pip install selenium
-        - pip install mysql-connector
-
-script :
-                - sonar-scanner
-                - echo "Waiting a bit before pinging the containers..."
-                - sleep 15
-                - curl localhost:8080
-                - curl localhost:4444
-                - curl localhost:8081
-                - echo "Starting DB tests..."
-                - sh execute_tests_db.sh
-                - echo "Installing Node dependencies..."
-                - npm install nightwatch sha1 mysql
-                - echo "Starting E2E tests..."
-                - sh execute_tests_e2e.sh
+- sudo /etc/init.d/mysql stop
+- pwd
+- ls -la
+- sudo docker-compose up -d
+- docker --version
+- pip install selenium
+- pip install mysql-connector
+script:
+- sonar-scanner
+- echo "Waiting a bit before pinging the containers..."
+- sleep 15
+- curl localhost:8080
+- curl localhost:4444
+- curl localhost:8081
+- echo "Starting DB tests..."
+- sh execute_tests_db.sh
+- echo "Installing Node dependencies..."
+- npm install nightwatch sha1 mysql
+- echo "Starting E2E tests..."
+- sh execute_tests_e2e.sh
+before_deploy:
+    - sudo apt install zip
+    - zip haisau.zip -r src/* config/* docker/* LICENSE README.md docker-compose.yml
+deploy:
+  provider: releases
+  api_key:
+    secure: xIm5lzdFTyS3Mz77up6oTEZxL6AkfhSugmN0YSp0QQF5HmQPlVwQfkc4cP9UiurJvdOUsKfODICa9PD5p5bPn0G7fELM9s4fyoBQexcALEbxUecP+t5iJpcbIM1UhCLHxZUJMdf9aalxhKYp9dyMRqDuE7ycxPtu+bxLCVkDyrsCOb0dEApbP2aggO/UhR7M56pfiQrL+5vqZzyrplnN6kzXSU8KVt9EsvwMian33fsZ3kAOE7npqhwaltGmWmQJfqknwVTXS4Y2LU0PQMzLYIvw8eeeBArEnR7haAE/wLOcZGDoyao2X06jtqoxWsjiPMDA6H6INtAF/CBMvYOgpDp08qMpB1b7Gy6lvqQ0nrLU5ob246vNUVj+5pe8GuIXT/+iekpr9CGEHNZQHdwztom3oEvAs6doErAwmVSMoRAJ4GM+87kJ9vLlLWG71FvpPdAExkQGBB32lqvCo1AzlWmqov612NioLkns9Qycb2eHdPEAkUi3QchA+0X03fDO/JSj9Mp13G5mqo2XRZQZ7e5zsu4hHQZPnygySNkI9wAKKKmBfMvEDs12Vmzfx076WPoeNIp62SDHkRuy+G/N6tgtwIJJXXJ+/mcSyE9zh3Ey+wnOWtRRxed8JZk+usfMyaqb5c2s/dISfk4SWf0WRNNdpNSi4PQORFCno+Rgs6I=
+  file: haisau.zip
+  skip_cleanup: true
+  on:
+    repo: echoffee/haisau
+    tags: true
