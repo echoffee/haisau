@@ -43,8 +43,8 @@ foreach($conn->query($query) as $row){
 					$sprint[$fldSprintDifficulty] = 0;
 					$sprint[$fldSprintState] = "STATE";
 
-					if(strtotime($sprint[$fldSprintDateEnd]) {
-						< time()) $sprint[$fldSprintState] = "PREVIOUS";
+					if(strtotime($sprint[$fldSprintDateEnd]) < time()) { 
+						$sprint[$fldSprintState] = "PREVIOUS";
 					}
 					else if(strtotime($sprint[$fldSprintDateStart]) < time()) { 
 						$sprint[$fldSprintState] = "CURRENT";
