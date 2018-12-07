@@ -5,6 +5,7 @@
     $idUtilisateur = $_SESSION['idUtilisateur'];
 
 ?>
+<!doctype html>
 <html lang="en">
   <head>
     <!-- Required meta tags -->

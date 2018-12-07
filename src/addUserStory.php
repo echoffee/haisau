@@ -13,10 +13,6 @@
   <body class="bg-white">
     <div class ="container">
     <form action="post_addUserStory.php" method="post"> 
-    <div class="form-group" >
-    <label for="numUs">US #</label>
-    <input type="text" class="form-control" name="numUs">
-    </div>
     <div class="form-group">
     <label for="desc">Description</label>
     <textarea class="form-control" name="desc" rows="3"></textarea>
@@ -33,7 +29,7 @@
     <label for="diff">Difficulty</label>
     <input type="text" class="form-control" name="diff">
     </div>
-    <button type="submit" class="btn btn-primary btn-sm" name="add_us">Add</button> &nbsp;
+    <button type="submit" class="btn btn-primary btn-sm" name="add_us">Add on backlog</button> &nbsp;
     <?php
     //back to our us
     session_start();
