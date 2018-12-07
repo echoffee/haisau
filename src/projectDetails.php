@@ -34,7 +34,7 @@ foreach($conn->query($query) as $row){
       echo '<a href="userStoryList.php?id='.$projet['idProjet'].'"class="btn btn-primary btn-md">Backlog</a> &nbsp'
     ?>  
     <?php
-      echo '<a href="sprintList.php?id='.$projet['idProjet'].'"class="btn btn-primary btn-md">Sprints</a>&nbsp'
+      echo '<a name="sprints" href="sprintList.php?id='.$projet['idProjet'].'"class="btn btn-primary btn-md">Sprints</a>&nbsp'
     ?>
       <a href="projectList.php"class="btn btn-primary btn-md">Back</a>
   </div>

@@ -25,7 +25,7 @@ foreach($conn->query($query) as $row){
 		<p>
 			<h1>Project <?php echo $projet['nom'] ?></h1>
 		</p>
-		<button type="button" id="create-sprint-btn" onClick="document.location.href='createSprint.php?id=<?php echo $projet['idProjet']?>'">New Sprint</button>
+		<button name="new-sprint" type="button" id="create-sprint-btn" onClick="document.location.href='createSprint.php?id=<?php echo $projet['idProjet']?>'">New Sprint</button>
 		<table style="width:100%">
 	    	<tr>
 			    <th>Sprint Name</th>
@@ -62,7 +62,7 @@ foreach($conn->query($query) as $row){
 						$sprint[$fldSprintDifficulty] = $sprint[$fldSprintDifficulty] + $task['cout'];
 					}
 
-					echo "<tr><th>".$sprint['nom']."</th><th>".$sprint[$fldSprintTaskCount]."</th><th>".$sprint[$fldSprintDateStart]."</th><th>".$sprint[$fldSprintDateEnd]."</th><th>".$sprint[$fldSprintDifficulty]."</th><th>".$sprint[$fldSprintState]."</th><th><a href='taskList.php?id=". $sprint['idSprint'] ."'><button type='button' id='create-sprint-btn '";
+					echo "<tr><th name='sprint".$sprint[$fldSprintName]."'>".$sprint[$fldSprintName]."</th><th>".$sprint[$fldSprintTaskCount]."</th><th>".$sprint[$fldSprintDateStart]."</th><th>".$sprint[$fldSprintDateEnd]."</th><th>".$sprint[$fldSprintDifficulty]."</th><th>".$sprint[$fldSprintState]."</th><th><a href='taskList.php?id=". $sprint['idSprint'] ."'><button type='button' id='create-sprint-btn '";
 
 					if($sprint[$fldSprintState] == "PREVIOUS") {
 						echo "disabled";

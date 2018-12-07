@@ -53,7 +53,7 @@ $newEnd = gmdate("Y-m-d", $newEnd);
       <td></td><td><input id="bCreate" type="submit" value="Create"></td>
      </tr>
      <tr>
-      <td></td><td><a href="sprintList.php?id=<?php echo $projet[$fldProjectId]?>">Cancel</a></td>
+      <td></td><td><a name="cancel" href="sprintList.php?id=<?php echo $projet[$fldProjectId]?>">Cancel</a></td>
      </tr>
     </table>
    </form>

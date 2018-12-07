@@ -8,7 +8,8 @@ o.connect();
     var valuesProjet = [
         ['T4DummyProject', 42],
         ['T6DummyProject', 17],
-        ['T7DummyProject', 346]
+        ['T7DummyProject', 346],
+        ['T16DummyProject', 365]
     ];
     o.query(sqlProjet, [valuesProjet], function (err, result) {
         if (err) throw err;
