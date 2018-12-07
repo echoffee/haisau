@@ -49,7 +49,7 @@
 
             $query = "SELECT Sprint.idSprint, Sprint.nom, Sprint.dateDebut, Sprint.dateFin, Sprint.idProjet FROM Sprint JOIN Projet ON Projet.idProjet = Sprint.idProjet WHERE Sprint.idProjet = ".$projet[$fldProjectId];
             foreach($conn->query($query) as $sprint){
-              if((strtotime($projet[$fldSprintDateStart]) < time()) && strtotime($projet[$fldSprintDateEnd]) > time()){
+              if((strtotime($sprint['dateDebut']) < time()) && strtotime($sprint['dateFin']) > time()){
                 $projet[$fldProjectSprint] = $sprint;
                 $projet[$fldProjectSprint][$fldSprintDateEnd] = date("d/m/Y", strtotime(substr($projet[$fldProjectSprint][$fldSprintDateEnd], 0, 10)));
               }
