@@ -25,7 +25,7 @@ require('checkUserConnect.php');
 
     <div class="container">
     <div class="row justify-content-md-center">
-    <?php echo "<h3> Project ".$row['nom'] ." user story</h3>";?>
+    <?php echo "<h3> Project ".$row['nom'] ." Backlog</h3>";?>
     </div>
     </div>
 
@@ -47,7 +47,7 @@ require('checkUserConnect.php');
         <?php
         require('connect.php');
         $sql = "SELECT  * FROM `UserStory`
-         WHERE `idProjet` = " . $idProject;
+         WHERE type = 'backlog' AND `idProjet` = " . $idProject;
         $disp_line = function($content) { return "<td>" . $content . "</td>";};
         $result = $conn->query($sql);
          if($result !== false && $result->rowCount() > 0)
@@ -58,7 +58,43 @@ require('checkUserConnect.php');
                   echo $disp_line($row['description']);
                   echo $disp_line($row['priorite']);
                   echo $disp_line($row['difficulte']);
-                  $tmp =  '<a href="updateUserStory.php?id='.$row['idUserStory'].' class="btn btn-success btn-sm">update</a> &nbsp;'.' <a href="deleteUserStory.php?id='.$row['idUserStory'].' " class="btn btn-danger btn-sm">delete</a>';
+                  $tmp =  '<a href="updateUserStory.php?id='.$row['idUserStory'].'"class="btn btn-primary btn-sm">update</a> &nbsp;'.' <a href="deleteUserStory.php?id='.$row['idUserStory'].' " class="btn btn-danger btn-sm">delete</a>';
+                  echo $disp_line($tmp);
+                  echo "</tr>";
+            }
+         }
+        ?>       
+        </table>
+
+    </div>
+        <br>
+        <div class="container">
+    <div class="row justify-content-md-center">
+    <?php echo "<h3> Project ".$row['nom'] ." Sandbox</h3>";?>
+    </div>
+    </div>
+      <table class = "table table-striped" style="width:100%">
+        <tr>
+          <th>Num</th>
+          <th>description</th>
+          <th>priorité</th>
+          <th>difficulté</th>
+          <th>Actions</th>
+        </tr> 
+        <?php
+        $sql = "SELECT  * FROM `UserStory`
+         WHERE  type = 'sandbox' AND `idProjet` = " . $idProject;
+        $disp_line = function($content) { return "<td>" . $content . "</td>";};
+        $result = $conn->query($sql);
+         if($result !== false && $result->rowCount() > 0)
+         {
+            while($row = $result->fetch()){
+                  echo "<tr>";
+                  echo $disp_line($row['num']);
+                  echo $disp_line($row['description']);
+                  echo $disp_line($row['priorite']);
+                  echo $disp_line($row['difficulte']);
+                  $tmp =  '<a href="acceptUserStory.php?id='.$row['idUserStory']."&idProject=".$idProject.' "class="btn btn-primary btn-sm">add into backlog</a> &nbsp;'.'<a href="updateUserStory.php?id='.$row['idUserStory'].' "class="btn btn-primary btn-sm">update</a> &nbsp;'.' <a href="deleteUserStory.php?id='.$row['idUserStory'].' " class="btn btn-danger btn-sm">delete</a>';
                   echo $disp_line($tmp);
                   echo "</tr>";
             }

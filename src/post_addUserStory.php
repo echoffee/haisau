@@ -4,17 +4,19 @@
 session_start();
 require 'connect.php';
 
-if (isset($_POST['add_us'])) 
+if (isset($_POST['add_us']) || isset($_POST['add_sandbox'])) 
 {
 
-
-    
-     
-    
+  
     $desUs = $_POST['desc'];
     $prioUs = $_POST['prio'];
     $diffUs = $_POST['diff'];
     $idproject = $_SESSION["idProject"];
+
+    if(isset($_POST['add_us']))
+    $type = 'backlog';
+    if(isset($_POST['add_sandbox']))
+    $type = 'sandbox';
 
     $stmt = $conn -> query("SELECT count(*) AS numUserStory from UserStory where idProjet = '$idproject '");
     $count = $stmt->rowCount();
@@ -25,9 +27,8 @@ if (isset($_POST['add_us']))
         echo $numUs;
         
     }
-
-    $query = "INSERT INTO UserStory (`num`, `description`, `priorite`, `difficulte`, `idProjet`)
-     VALUES ('$numUs','$desUs','$prioUs','$diffUs','$idproject')"; 
+    $query = "INSERT INTO UserStory (`num`, `description`, `priorite`, `difficulte`, `type`, `idProjet`)
+     VALUES ('$numUs','$desUs','$prioUs','$diffUs','$type','$idproject')"; 
      //working
     $result = $conn->exec($query) ;
     if ($result == 1) {
