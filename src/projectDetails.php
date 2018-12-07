@@ -51,7 +51,6 @@ foreach($conn->query($query) as $row){
           <th>Mail</th>
         </tr> 
         <?php
-        // select all users who don't figure alredy on project 
         $sql = "SELECT DISTINCT  `login`,  `mail` FROM `Utilisateur`, Travailler
          WHERE  Travailler.idProjet = '$currentIdProject' AND Utilisateur.idUtilisateur = Travailler.idUtilisateur
          AND status != 'pending'";

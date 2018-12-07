@@ -17,8 +17,8 @@ CREATE TABLE Travailler (
 	idUtilisateur int NOT NULL,
 	idProjet int NOT NULL,
 	status varchar(255) NOT NULL,
-	FOREIGN KEY (idProjet) REFERENCES Projet(idProjet),
-	FOREIGN KEY (idUtilisateur) REFERENCES Utilisateur(idUtilisateur)
+	FOREIGN KEY (idProjet) REFERENCES Projet(idProjet) ON DELETE CASCADE,
+	FOREIGN KEY (idUtilisateur) REFERENCES Utilisateur(idUtilisateur) ON DELETE CASCADE 
 
 );
 CREATE TABLE Sprint (

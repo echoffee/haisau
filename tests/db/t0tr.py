@@ -77,11 +77,11 @@ for i in range(10):
     test_correct_insert("Projet", ["nom", "dureeSprint"], sql_iProjetN)
 
 ################
-sql_iTravailler1 = (1, 2)
-sql_iTravailler2 = (1, 1)
+sql_iTravailler1 = (1, 2, 'pending')
+sql_iTravailler2 = (1, 1, 'joined')
 sql_iTravailler3 = (1, 2)
-test_correct_insert("Travailler", ["idUtilisateur", "idProjet"], sql_iTravailler1)
-test_correct_insert("Travailler", ["idUtilisateur", "idProjet"], sql_iTravailler2)
+test_correct_insert("Travailler", ["idUtilisateur", "idProjet", "status"], sql_iTravailler1)
+test_correct_insert("Travailler", ["idUtilisateur", "idProjet", "status"], sql_iTravailler2)
 test_incorrect_insert("Travailler", ["idUtilisateur", "idProjet"], sql_iTravailler3)
 
 #################
