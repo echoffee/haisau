@@ -1,4 +1,5 @@
 <?php
+require('_strings.php');
 require('checkUserConnect.php');
 session_start();
 require 'connect.php';
@@ -38,28 +39,36 @@ foreach($conn->query($query) as $row){
 	    	<?php
 				$query = "SELECT * FROM Sprint WHERE Sprint.idProjet = ". $projet['idProjet'] ." ORDER BY Sprint.dateDebut";
 				foreach($conn->query($query) as $sprint){
-					$sprint['nbTasks'] = 0;
-					$sprint['difficulty'] = 0;
-					$sprint['state'] = "STATE";
+					$sprint[$fldSprintTaskCount] = 0;
+					$sprint[$fldSprintDifficulty] = 0;
+					$sprint[$fldSprintState] = "STATE";
 
-					if(strtotime($sprint['dateFin']) < time()) $sprint['state'] = "PREVIOUS";
-					else if(strtotime($sprint['dateDebut']) < time()) $sprint['state'] = "CURRENT";
-					else $sprint['state'] = "NEXT";
+					if(strtotime($sprint[$fldSprintDateEnd]) {
+						< time()) $sprint[$fldSprintState] = "PREVIOUS";
+					}
+					else if(strtotime($sprint[$fldSprintDateStart]) < time()) { 
+						$sprint[$fldSprintState] = "CURRENT";
+					}
+					else {
+						$sprint[$fldSprintState] = "NEXT";
+					}
 
-					$sprint['dateDebut'] = date("d/m/Y", strtotime(substr($sprint['dateDebut'], 0, 10)));
-					$sprint['dateFin'] = date("d/m/Y", strtotime(substr($sprint['dateFin'], 0, 10)));
+					$sprint[$fldSprintDateStart] = date("d/m/Y", strtotime(substr($sprint[$fldSprintDateStart], 0, 10)));
+					$sprint[$fldSprintDateEnd] = date("d/m/Y", strtotime(substr($sprint[$fldSprintDateEnd], 0, 10)));
 
 					$query = "SELECT cout FROM Tache JOIN Sprint ON Tache.idSprint = Sprint.idSprint WHERE Tache.idSprint = ".$sprint['idSprint'];
 					foreach($conn->query($query) as $task){
-						$sprint['nbTasks'] = $sprint['nbTasks'] + 1;
-						$sprint['difficulty'] = $sprint['difficulty'] + $task['cout'];
+						$sprint[$fldSprintTaskCount] = $sprint[$fldSprintTaskCount] + 1;
+						$sprint[$fldSprintDifficulty] = $sprint[$fldSprintDifficulty] + $task['cout'];
 					}
 
-					echo "<tr><th>".$sprint['nom']."</th><th>".$sprint['nbTasks']."</th><th>".$sprint['dateDebut']."</th><th>".$sprint['dateFin']."</th><th>".$sprint['difficulty']."</th><th>".$sprint['state']."</th><th><a href='taskList.php?id=". $sprint['idSprint'] ."'><button type='button' id='create-sprint-btn '";
+					echo "<tr><th>".$sprint['nom']."</th><th>".$sprint[$fldSprintTaskCount]."</th><th>".$sprint[$fldSprintDateStart]."</th><th>".$sprint[$fldSprintDateEnd]."</th><th>".$sprint[$fldSprintDifficulty]."</th><th>".$sprint[$fldSprintState]."</th><th><a href='taskList.php?id=". $sprint['idSprint'] ."'><button type='button' id='create-sprint-btn '";
 
-					if($sprint['state'] == "PREVIOUS") echo "disabled";
+					if($sprint[$fldSprintState] == "PREVIOUS") {
+						echo "disabled";
+					}
 
-					echo ">Add Tasks</button></a><button type='button' id='delete-sprint-btn'>Delete</button></th></tr>";
+					echo ">Add Tasks</button></a></th></tr>";
 				}
 			?>
 

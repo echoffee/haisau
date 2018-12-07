@@ -1,4 +1,5 @@
 <?php
+require('_strings.php');
 require('checkUserConnect.php');
 session_start();
 require 'connect.php';
@@ -6,7 +7,7 @@ $query = "SELECT * FROM Projet WHERE Projet.idProjet = ".$_GET['id'];
 foreach($conn->query($query) as $row){
   $projet = $row;
 }
-$lastSprint = "SELECT MAX(dateDebut), MAX(dateFin) FROM Sprint WHERE Sprint.idProjet =".$projet['idProjet'];
+$lastSprint = "SELECT MAX(dateDebut), MAX(dateFin) FROM Sprint WHERE Sprint.idProjet =".$projet[$fldProjectId];
 foreach($conn->query($lastSprint) as $S){
   $lastSprintEndDate = $S[1];
 }
@@ -40,7 +41,7 @@ $newEnd = gmdate("Y-m-d", $newEnd);
       <td>Sprint name : </td><td><input type="text" name="sprintName" /></td>
      </tr>
      <tr>
-       <td><input type="hidden" name="projectId" value="<?php echo $projet['idProjet']?>" /></td>
+       <td><input type="hidden" name="projectId" value="<?php echo $projet[$fldProjectId]?>" /></td>
      </tr>
      <tr>
        <td><input type="hidden" name="start" value="<?php echo $newStart ?>" /></td>
@@ -52,7 +53,7 @@ $newEnd = gmdate("Y-m-d", $newEnd);
       <td></td><td><input id="bCreate" type="submit" value="Create"></td>
      </tr>
      <tr>
-      <td></td><td><a href="sprintList.php?id=<?php echo $projet['idProjet']?>">Cancel</a></td>
+      <td></td><td><a href="sprintList.php?id=<?php echo $projet[$fldProjectId]?>">Cancel</a></td>
      </tr>
     </table>
    </form>
