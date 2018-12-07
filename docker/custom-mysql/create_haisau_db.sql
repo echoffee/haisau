@@ -36,6 +36,7 @@ CREATE TABLE UserStory (
 	description text,
 	priorite varchar(16) NOT NULL,
 	difficulte int,
+	type text,
 	idProjet int NOT NULL,
 	PRIMARY KEY (idUserStory),
 	FOREIGN KEY (idProjet) REFERENCES Projet(idProjet) ON DELETE CASCADE

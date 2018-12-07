@@ -16,7 +16,8 @@ if (isset($_POST['login_user']))
 
        //Retrieve the user account information for the given username.
 
-        $stmt = $conn -> query("SELECT idUtilisateur, login, password, mail FROM Utilisateur where login = '$username' AND password = '$password'");
+        $stmt = $conn -> query("SELECT idUtilisateur, login, password, mail
+        FROM Utilisateur where login = '$username' AND password = '$password'");
         $count = $stmt->rowCount();
         if($count <= 0) // query is empty
         {
