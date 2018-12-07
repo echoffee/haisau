@@ -8,7 +8,6 @@ require('checkUserConnect.php');
   //get project name from id 
   $query = $conn -> query("SELECT `nom` FROM `Projet` WHERE idProjet = " . $idProject);
   $row = $query->fetch();
-  //$row['nom'];
 ?>
 <!doctype html>
 <html lang="en">

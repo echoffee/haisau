@@ -16,9 +16,10 @@ CREATE TABLE Projet (
 CREATE TABLE Travailler (
 	idUtilisateur int NOT NULL,
 	idProjet int NOT NULL,
-	PRIMARY KEY(idUtilisateur, idProjet),
-	FOREIGN KEY (idUtilisateur) REFERENCES Utilisateur(idUtilisateur) ON DELETE CASCADE,
-	FOREIGN KEY (idProjet) REFERENCES Projet(idProjet) ON DELETE CASCADE
+	status varchar(255) NOT NULL,
+	FOREIGN KEY (idProjet) REFERENCES Projet(idProjet),
+	FOREIGN KEY (idUtilisateur) REFERENCES Utilisateur(idUtilisateur)
+
 );
 CREATE TABLE Sprint (
 	idSprint int NOT NULL AUTO_INCREMENT,
