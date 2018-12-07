@@ -65,6 +65,7 @@ push sur le dépôt.
 Le projet ne contient pas de tests unitaires sur le code PHP car les fonctionnalités sont déjà testées par les tests E2E. La mise en place de la base de données est testée par les tests unitaires sur la structures des tables.
 
 ## Production des releases
+Les releases du logiciel auront chacunes leur propre branche, pouvant accueillir des potentielles mises à jour de type hotfix.
 
 A compter de la version `v0.3` du logiciel, les releases seront générées automatiquement par Travis dès l'ajout d'un tag sur un commit. Le changelog sera quant à lui rédigé sur Github comme les version précédentes du logiciel.
 
