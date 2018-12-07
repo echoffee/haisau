@@ -54,17 +54,14 @@ foreach($conn->query($query) as $row){
         $sql = "SELECT DISTINCT  `login`,  `mail` FROM `Utilisateur`, Travailler
          WHERE  Travailler.idProjet = '$currentIdProject' AND Utilisateur.idUtilisateur = Travailler.idUtilisateur
          AND status != 'pending'";
-         if($result = $conn->query($sql))
-         {
-          if($result->rowCount() > 0)
-          {
-            while($row = $result->fetch()){
-                  echo "<td>" . $row['login'] . "</td>";
-                  echo "<td>" . $row['mail'] . "</td>";
-                  echo "</tr>";
-            }
+        if($result = $conn->query($sql) && $result->rowCount() > 0)
+        {
+          while($row = $result->fetch()){
+                echo "<td>" . $row['login'] . "</td>";
+                echo "<td>" . $row['mail'] . "</td>";
+                echo "</tr>";
           }
-         }
+        }
         ?>       
         </table>
   </div>
