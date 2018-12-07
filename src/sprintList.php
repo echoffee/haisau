@@ -24,7 +24,7 @@ foreach($conn->query($query) as $row){
 		<p>
 			<h1>Project <?php echo $projet['nom'] ?></h1>
 		</p>
-		<button type="button" id="create-sprint-btn">New Sprint</button>
+		<button type="button" id="create-sprint-btn" onClick="document.location.href='createSprint.php?id=<?php echo $projet['idProjet']?>'">New Sprint</button>
 		<table style="width:100%">
 	    	<tr>
 			    <th>Sprint Name</th>
@@ -59,7 +59,7 @@ foreach($conn->query($query) as $row){
 
 					if($sprint['state'] == "PREVIOUS") echo "disabled";
 
-					echo ">Add Tasks</button><button type='button' id='create-sprint-btn'>Delete</button></a></th></tr>";
+					echo ">Add Tasks</button></a><button type='button' id='delete-sprint-btn'>Delete</button></th></tr>";
 				}
 			?>
 
