@@ -24,7 +24,7 @@ foreach($conn->query($query) as $row){
 		<p>
 			<h1>Sprint <?php echo $sprint['nom'] ?></h1>
 		</p>
-		<button type="button" id="create-task-btn">Add Tasks</button>
+		<button type="button" id="create-task-btn" onClick="document.location.href='createTask.php?id=<?php echo $sprint['idSprint']?>'">Add Tasks</button>
 		<table style="width:100%">
 	    	<tr>
 			    <th>Task Name</th>
