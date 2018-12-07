@@ -48,8 +48,7 @@ Le déploiement de l'application se fait via [Docker](https://www.docker.com/).
 
 ## Déroulement des tasks
 Au début du sprint, une liste de tâches à réaliser est mise en place, puis chaque membre du projet réalise celles qu'il souhaite réaliser.
-La liste des tâches est consultable sur le fichier markdown du sprint en cours et sur le [dashboard](https://github.com/echoffee/haisau/projects), où chacun peut indiquer qui fait quelle tâche, leur statut et les commits associés.
-
+La liste des tâches est consultable sur le fichier markdown dusprint en cours et sur le [dashboard](https://github.com/echoffee/haisau/projects), où chacun peut indiquer qui fait quelle tâche, leur statut et les commits associés.
 ## Déroulement des tests
 
 Les tests sont écrits de façon indépendantes à la réalisation des tâches concernées. Ces tests,
@@ -62,6 +61,14 @@ Chaque test est explicité avant leur réalisation dans le dossier `conduite/des
 Les tests peuvent être lancés en batterie via les scripts shell `execute_tests_<type>.db` présents
 à la racine du projet. Ces commandes sont exécutées par l'outil d'intégration continue à chaque
 push sur le dépôt.
+
+Le projet ne contient pas de tests unitaires sur le code PHP car les fonctionnalités sont déjà testées par les tests E2E. La mise en place de la base de données est testée par les tests unitaires sur la structures des tables.
+
+## Production des releases
+
+A compter de la version `v0.3` du logiciel, les releases seront générées automatiquement par Travis dès l'ajout d'un tag sur un commit. Le changelog sera quant à lui rédigé sur Github comme les version précédentes du logiciel.
+
+Ces releases seront accompagnées d'une archive `.zip` contenant *uniquement* les fichiers nécessaires au déploiement du logiciel (ainsi sont exclus les fichiers de spécifications, les tests et fichiers en relation avec le système de versionnage).
 
 ## Template du changelog
 
@@ -79,5 +86,5 @@ Installation :
 
 ```
 
-Les versions suivront le modèle `<majeur>.<mineur>.<hotfix (optionnel)>`.
+Les versions suivront le modèle `v<majeur>.<mineur>.<hotfix (optionnel)>`.
 Les issues couvertes sont référencées par leur identifiant.
