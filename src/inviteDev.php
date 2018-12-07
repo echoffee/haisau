@@ -6,6 +6,7 @@ $idUser = $_SESSION['idUtilisateur'];
 $projectId = $_GET['id']
 
 ?>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <!-- Required meta tags -->
