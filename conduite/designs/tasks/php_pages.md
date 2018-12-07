@@ -169,12 +169,12 @@ participait déjà.
 Contient une page avec trois boutons, un premier nommé "Upload" qui ouvre un
 sélecteur de fichiers lorsque l'on clique dessus. Il permet à l'utilisateur de
 sélectionner la release de son projet qu'il veut uploader pour un sprint
-précis. Les deux autres boutons sont les boutons "Confirm" et "Cancel", 
-permettant respectivement de valider l'upload du fichier sélectionné via le 
-bouton plus haut, ou bien d'annuler l'upload et de revenir sur la page précédente, 
-qui est la page du sprint du projet depuis lequel l'utilisateur voulait uploader sa 
-release. Si l'utilisateur clique sur le bouton "Confirm" sans avoir choisi auparavant 
-un fichier à uploader, alors un message d'erreur apparaît, "You must have choosen a 
+précis. Les deux autres boutons sont les boutons "Confirm" et "Cancel",
+permettant respectivement de valider l'upload du fichier sélectionné via le
+bouton plus haut, ou bien d'annuler l'upload et de revenir sur la page précédente,
+qui est la page du sprint du projet depuis lequel l'utilisateur voulait uploader sa
+release. Si l'utilisateur clique sur le bouton "Confirm" sans avoir choisi auparavant
+un fichier à uploader, alors un message d'erreur apparaît, "You must have choosen a
 file to upload first".
 
 ### downloadRelease.php
@@ -184,7 +184,7 @@ télécharge la release en question lorsque l'on clique dessus. Le deuxième bou
 est le bouton "Cancel", permettant de revenir sur la page précédente, qui est la
 page du sprint du projet depuis lequel l'utilisateur voulait télécharger la
 release. Si l'utilisateur clique sur le bouton "Download" et qu'aucune release
-n'a été uploadée auparavant, alors un message d'erreur apparaît, "There is no 
+n'a été uploadée auparavant, alors un message d'erreur apparaît, "There is no
 release avalaible to download for this sprint yet".
 
 ### createTest.php
@@ -211,7 +211,12 @@ message d'erreur apparaît "You must have written a bug to report first".
 
 ### burnDownChart.php
 
-
+Contient le Burn Down Chart relatif à un sprint. A la fin d'un sprint, le Burn
+Down Chart de ce dernier est généré automatiquement et est accessible par un
+bouton disponible sur la page du sprint et qui nous redirige vers le Burn Down
+Chart en question via la page burnDownChart.php. Le Burn Down Chart présentera
+le nombre d'US prévues pour le sprint et le nombre d'US réalisées en fonction du
+temps disponible.
 
 ### connect.php
 

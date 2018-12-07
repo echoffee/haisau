@@ -30,6 +30,7 @@
     <input type="text" class="form-control" name="diff">
     </div>
     <button type="submit" class="btn btn-primary btn-sm" name="add_us">Add on backlog</button> &nbsp;
+    <button type="submit" class="btn btn-primary btn-sm" name="add_sandbox">Add on sandbox</button> &nbsp;
     <?php
     //back to our us
     session_start();
